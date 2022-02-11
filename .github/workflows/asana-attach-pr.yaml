@@ -1,0 +1,11 @@
+name: Attach PR to Asana
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  asana-attach-pr:
+    uses: ocp-on-nerc/workflows/.github/workflows/asana-attach-pr.yaml@main
+    secrets:
+      ASANA_TOKEN: ${{ secrets.ASANA_TOKEN }}
