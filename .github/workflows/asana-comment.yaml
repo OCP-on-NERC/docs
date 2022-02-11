@@ -1,0 +1,11 @@
+name: Comment on Asana task
+
+on:
+  pull_request:
+    types: [opened, closed, reopened]
+
+jobs:
+  asana-attach-pr:
+    uses: ocp-on-nerc/workflows/.github/workflows/asana-comment.yaml@main
+    secrets:
+      ASANA_TOKEN: ${{ secrets.ASANA_TOKEN }}
