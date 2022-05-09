@@ -1,23 +1,13 @@
 # VLAN Assignments
 
-| VLAN ID | Description                                                |
-|---------|------------------------------------------------------------|
-| 2170    | NERC/MOC - PROD Compute OBM/IPMI network                   |
-| 2171    | NERC/MOC - PROD Compute Frontend/Worker/Admin              |
-| 2172    | NERC/MOC - PROD Compute storage backend network            |
-| 2173    | NERC/MOC - PROD Controller OBM/IPMI network                |
-| 2174    | NERC/MOC - PROD Controller Frontend/Worker/Admin           |
-| 2175    | NERC/MOC - PROD Controller storage backend network         |
-| 2176    | NERC/MOC - TEST Compute OBM/IPMI network                   |
-| 2177    | NERC/MOC - TEST Compute Cluster Frontend/Worker/Admin      |
-| 2178    | NERC/MOC - TEST Compute Cluster storage backend network    |
-| 2179    | NERC/MOC - TEST Controller OBM/IPMI network                |
-| 2180    | NERC/MOC - TEST Controller Cluster Frontend/Worker/Admin   |
-| 2181    | NERC/MOC - TEST Controller Cluster storage backend network |
-| 2182    | NERC/MOC - INFRA Compute OBM/IPMI network                  |
-| 2183    | NERC/MOC - INFRA Compute Frontend/Worker/Admin             |
-| 2184    | NERC/MOC - INFRA Compute storage backend network           |
-| 2185    | NERC/MOC - INFRA Controller OBM/IPMI network               |
-| 2186    | NERC/MOC - INFRA Controller Frontend/Worker/Admin          |
-| 2187    | NERC/MOC - INFRA Controller storage backend network        |
-| 2188    | NERC/MOC - Public Access Network                           |
+| VLAN ID | Address range  | Description               |
+|---------|----------------|---------------------------|
+| 2170    | 10.30.0.0/22   | OBM/IPMI network          |
+| 2171    | 10.30.4.0/24   | Network device management |
+| 2172    | 10.30.6.0/23   | PROD baremetal network    |
+| 2173    | 10.30.10.0/23  | PROD storage backend      |
+| 2174    | 10.30.8.0/24   | TEST baremetal network    |
+| 2175    | 10.30.12.0/24  | TEST storage backend      |
+| 2176    | 10.30.9.0/24   | INFRA baremetal network   |
+| 2177    | 10.30.13.0/24  | INFRA storage backend     |
+| 2178    | 199.94.61.0/24 | Public network            |
