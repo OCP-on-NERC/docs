@@ -1,6 +1,6 @@
 # Cluster Hardware Overview
 
-## Infra: 
+## Infra
 
 ### Controler nodes
 
@@ -11,10 +11,10 @@
 [SD530]: https://www.lenovo.com/us/en/p/servers-storage/servers/high-density/thinksystem-sd530/77xx7dssd53
 
 ### Worker nodes
+
 None
 
-
-## Prod:
+## Prod
 
 ### Controler nodes
 
@@ -32,7 +32,7 @@ None
 
 [R640]: https://www.dell.com/en-us/work/shop/productdetailstxn/poweredge-r640
 
-## Test:
+## Test
 
 ### Controler nodes
 
