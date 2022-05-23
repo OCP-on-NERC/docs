@@ -4,7 +4,7 @@
 
 ### Controler nodes (Infra)
 
-| Modle | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
+| Model | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
 | ----- | ----- | --------- | --------- | --------- | -------- | -------- |
 | [SD530][] | 3 | | | | | |
 
@@ -14,17 +14,23 @@
 
 None
 
+### Network Hardware (Infra)
+
+| Model | Count | Speed | Ports |
+| ----- | ----- | ----- | ----- |
+|  |  |  |  |
+
 ## Prod
 
 ### Controler nodes (Prod)
 
-| Modle | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
+| Model | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
 | ----- | ----- | --------- | --------- | --------- | -------- | -------- |
 | [SD530][] | 3 | | | | | |
 
 ### Worker nodes (Prod)
 
-| Modle | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
+| Model | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
 | ----- | ----- | --------- | --------- | --------- | -------- | -------- |
 | [R640][] | 2 | | | | | |
 | [Dell FX2 chassis][FX2] | 1 | | | | | |
@@ -32,21 +38,33 @@ None
 
 [R640]: https://www.dell.com/en-us/work/shop/productdetailstxn/poweredge-r640
 
+### Network Hardware (Prod)
+
+| Model | Count | Speed | Ports |
+| ----- | ----- | ----- | ----- |
+|  |  |  |  |
+
 ## Test
 
 ### Controler nodes (Test)
 
-| Modle | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
+| Model | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
 | ----- | ----- | --------- | --------- | --------- | -------- | -------- |
 
 ### Worker nodes (Test)
 
-| Modle | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
+| Model | Count | CPU Count | CPU Speed | RAM Count | RAM Size | SSD size |
 | ----- | ----- | --------- | --------- | --------- | -------- | -------- |
 | [Dell FX2 chassis][FX2] | 10 | | | | | |
 | [Dell FC430 blades][FC430] | 80 | | | | | |
 
 [FX2]: https://www.dell.com/en-us/work/shop/productdetailstxn/poweredge-fx-chassis
 [FC430]: https://www.dell.com/support/home/en-us/product-support/product/poweredge-fc430/overview
+
+### Network Hardware (Test)
+
+| Model | Count | Speed | Ports |
+| ----- | ----- | ----- | ----- |
+|  |  |  |  |
 
 ---
