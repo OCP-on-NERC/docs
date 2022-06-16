@@ -1,11 +1,11 @@
 
-## Goal 1: 
+## Goal 1:
 
-The first goal is to build and test a production OpenShift testbed that meets NERC needs (per second goal).  For this build, use released Red Hat and upstream open source software that has already been used in either the Operate First Smaug cluster or the OpenShift MOC cluster.  Both clusters are currently operating and supporting users (physically in the MGHPCC), which reduces risk for the production testbed.  (Depending on timing for the installation, newer versions that what has been installed in Smaug may be used for the NERC build.)  (See https://github.com/OCP-on-NERC/docs/tree/main/architecture for more information on hardware and software expected  to be used for the NERC build)   A team of Red Hat, NERC and MOC staff will build the cluster and turn it over to NERC (hardware and software) for operations and further expansion after successful completion of Operations Use Cases. 
+The first goal is to build and test a production OpenShift testbed that meets NERC needs (per second goal).  For this build, use released Red Hat and upstream open source software that has already been used in either the Operate First Smaug cluster or the OpenShift MOC cluster.  Both clusters are currently operating and supporting users (physically in the MGHPCC), which reduces risk for the production testbed.  (Depending on timing for the installation, newer versions that what has been installed in Smaug may be used for the NERC build.)  (See https://github.com/OCP-on-NERC/docs/tree/main/architecture for more information on hardware and software expected  to be used for the NERC build)   A team of Red Hat, NERC and MOC staff will build the cluster and turn it over to NERC (hardware and software) for operations and further expansion after successful completion of Operations Use Cases.
 
 ### Assumptions:
 
-“The cluster” refers to the production OpenShift system build-out on the NERC donated hardware.  
+“The cluster” refers to the production OpenShift system build-out on the NERC donated hardware.
 1. The production OpenShift cluster will be initially built and tested by the Red Hat Research group and the MOC engineering staff, working together.
 2. The cluster will be physically located in the MGHPCC.  NERC donated server hardware for the initial build is located at Row 7 Pod C Cage 03 for the infra cluster and Row 7 Pod C Cage 03 (controllers) & Row 1 Pod A Cage 08 (workers) for the prod cluster and Row 7 Pod B Cage 19 for the test cluster.  Note that additional hardware in NET2 racks is not part of this deployment.   (see https://docs.google.com/document/d/1wleTt-j-EDp9Ix75mdinhbQqmlK4udMAp9BtJ6faOpY /edit for original proposal for the elastic data center.)
 3. The cluster will use a public repo (https://github.com/OCP-on-NERC) for all docs, configurations, and new software that isn’t already supported in a different public repo.  (Secrets will of course not be stored in a public repo.) The project to build and operate this cluster will be a public project that is closely related to the Operate First community, and submits new code to that community wherever possible. (The Acceptable Use Policy for this project may differ from the general Operate First AUP, depending on BU/Harvard University requirements.)
@@ -30,7 +30,7 @@ The first goal is to build and test a production OpenShift testbed that meets NE
 9. NERC will review all final successful tests, and either run their own additional tests (if manpower allows), or sign off on the tests as completed by MOC and Red Hat.
 10. NERC will take over operations of the initial OpenShift testbed following successful acceptance test completion.
 
-## Goal 2: 
+## Goal 2:
 
 The second goal is for NERC to support a limited number of early users and projects on the first production OpenShift Testbed.  Early users and projects should start using the cluster as soon as Acceptance testing is complete, in order to burn in as much of the system as possible before GA in fall.  Red Hat support issues will be generated as needed, and escalated with the help of Red Hat consultants and the TAM assigned to this project.   MOC and NERC will be responsible for escalating support issues with other open source software providers (e.g. ColdFront).
 
