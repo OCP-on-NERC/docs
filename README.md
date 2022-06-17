@@ -13,3 +13,21 @@ Documentation for the OCP on NERC project.
 [nerc-ansible]: https://github.com/ocp-on-nerc/nerc-ansible
 [nerc-ocp-apps]: https://github.com/ocp-on-nerc/nerc-ocp-apps
 [nerc-ocp-config]: https://github.com/ocp-on-nerc/nerc-ocp-config
+
+## Validations make your life easier
+
+### Pre-commit checks
+
+Configure linters to run before each commit by installing the
+`pre-commit` tool:
+
+```
+pip install pre-commit
+```
+
+And then enabling it for your working directory. From inside this
+repository, run:
+
+```
+pre-commit install
+```
