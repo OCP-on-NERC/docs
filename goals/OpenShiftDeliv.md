@@ -19,7 +19,7 @@ Minimum list of required items to complete initial OpenShift install phase of OC
 
 - [ ] Prometheus operator configured and collecting metrics for production infrastructure.
 
-- [ ] Resources, storage and interfaces needed to configure and install Grafana for monitoring and alerting on OCP are available and ready for Grafana integration. 
+- [ ] Resources, storage and interfaces needed to configure and install Grafana for monitoring and alerting on OCP are available and ready for Grafana integration.
 
 - [ ] Specific operations procedures for bringing up OCP and related required software in NERC automated to the extent possible and documented where automation is not possible.
 
