@@ -54,5 +54,15 @@ This workload creates resources such as builds and routes to stress the OpenShif
 | 55 | 33 | 495| 550 | 605 | 83 |
 | 65 | 39 | 585| 650 | 715 | 98 |
 
+*0.6 Projects per worker node*
+
+*9 configMaps per worker node*
+
+*10 clusterIPServices per worker node*
+
+*11 secrets per worker node*
+
+*1.5 deploymenys and replicaSets per worker node*
+
 [1]: https://kube-burner.readthedocs.io/en/latest/
 [2]: https://github.com/cloud-bulldozer/kube-burner/tree/master/examples/workloads
