@@ -1,0 +1,35 @@
+---
+global:
+  writeToFile: true
+  metricsDirectory: collected-metrics
+  indexerConfig:
+    enabled: true
+    esServers: [{{.ES_ENDPOINT}}]
+    insecureSkipVerify: true
+    defaultIndex: kube-burner
+    type: elastic
+  measurements:
+    - name: podLatency
+      esIndex: kube-burner-kdh
+
+jobs:
+  - name: kubelet-density-heavy
+    jobIterations: {{.JOB_ITERATIONS}}
+    qps: 25
+    burst: 25
+    namespacedIterations: true
+    namespace: kubelet-density-heavy
+    waitWhenFinished: true
+    podWait: false
+    objects:
+
+      - objectTemplate: templates/postgres-deployment.yml
+        replicas: 1
+
+      - objectTemplate: templates/app-deployment.yml
+        replicas: 1
+        inputVars:
+          readinessPeriod: 10
+
+      - objectTemplate: templates/postgres-service.yml
+        replicas: 1
