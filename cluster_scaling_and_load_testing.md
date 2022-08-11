@@ -6,8 +6,17 @@ We will initially be starting out with 3 Control nodes and 5 worker nodes. From 
 
 ## Interval Testing
 
-[1]: https://kube-burner.readthedocs.io/en/latest/
 After each interval reports that the nodes are ready we will use [kube-burner][1]. The goal here is two-fold. First we want to make sure that we can schedule pods on each node, and second that we can max out node capacity without needing to add infra nodes to support the three controller nodes.
+
+## Key Performance Indicators
+
+- Kubelet and CRI-O CPU and Memory Usage
+- API Server and ETCD CPU and Memory Usage
+- Control Node and Worker Node CPU and Memory Usage
+- API Response Latency (99th percentile)
+- ETCD No leader elections
+- Pod Latencies, Scheduling and Ready
+- Cluster Operator Health
 
 ## Tests
 
