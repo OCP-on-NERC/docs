@@ -10,8 +10,20 @@ global:
     type: elastic
   measurements:
     - name: podLatency
-      esIndex: kube-burner-kdh
-
+      esIndex: kube-burner-cd
+      thresholds:
+      - conditionType: Ready
+        metric: P99
+        threshold: 6000ms
+      - conditionType: Ready
+        metric: P95
+        threshold: 5500ms
+      - conditionType: Ready
+        metric: Max
+        threshold: 6000ms
+      - conditionType: Ready
+        metric: Avg
+        threshold: 3500ms
 jobs:
   - name: kubelet-density-heavy
     jobIterations: {{.JOB_ITERATIONS}}
