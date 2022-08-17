@@ -2,7 +2,7 @@
 
 ## Cluster Scaling
 
-We will initially be starting out with 3 Control nodes and 5 worker nodes. From here will will scale up at intervals of 10 worker nodes per until we reach the maximum number of available nodes.
+We will initially be starting out with 3 Control nodes and 5 worker nodes. From here we will scale up at intervals of 10 worker nodes per iteration until we reach the maximum number of available nodes.
 
 ## Interval Testing
 
@@ -62,7 +62,41 @@ This workload creates resources such as builds and routes to stress the OpenShif
 
 *11 secrets per worker node*
 
-*1.5 deploymenys and replicaSets per worker node*
+*1.5 deployments and replicaSets per worker node*
+
+## Running the tests
+
+1. You'll need to download the binaries from the kube-burner [github][3]
+
+    ```shell
+    wget https://github.com/cloud-bulldozer/kube-burner/releases/download/v0.16.1/kube-burner-0.16.1-Linux-x86_64.tar.gz
+    ```
+
+2. Extract the binary
+
+    ```shell
+    tar -xvzf kube-burner-0.16.1-Linux-x86_64.tar.gz
+    ```
+
+3. Set required environment variables
+
+    ```shell
+    export ES_ENDPOINT="https://endpoint.es.com" # Endpoint for elastic server. Leave blank if none
+    export JOB_ITERATIONS=8 # Match to corresponding number of projects to available worker nodes (See tables above)
+    ```
+
+4. Run test
+
+    ```shell
+    kube-burner init -c <test-config.yaml> # Make sure to capture uuid from output. Can be found as kube-burner-uuid label on all resources created
+    ```
+
+5. Remove resources created
+
+    ```shell
+    kube-burner destroy --uuid=<captured-uuid>
+    ```
 
 [1]: https://kube-burner.readthedocs.io/en/latest/
 [2]: https://github.com/cloud-bulldozer/kube-burner/tree/master/examples/workloads
+[3]: https://github.com/cloud-bulldozer/kube-burner/releases
