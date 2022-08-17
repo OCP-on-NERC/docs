@@ -2,12 +2,21 @@
 
 ## Cluster Scaling
 
-We will initially be starting out with 3 Control nodes and 5 worker nodes. From here will will scale up at intervals of 10 worker nodes per until we reach the maximum number of available nodes.
+We will initially be starting out with 3 Control nodes and 5 worker nodes. From here we will scale up at intervals of 10 worker nodes per iteration until we reach the maximum number of available nodes.
 
 ## Interval Testing
 
-[1]: https://kube-burner.readthedocs.io/en/latest/
 After each interval reports that the nodes are ready we will use [kube-burner][1]. The goal here is two-fold. First we want to make sure that we can schedule pods on each node, and second that we can max out node capacity without needing to add infra nodes to support the three controller nodes.
+
+## Key Performance Indicators
+
+- Kubelet and CRI-O CPU and Memory Usage
+- API Server and ETCD CPU and Memory Usage
+- Control Node and Worker Node CPU and Memory Usage
+- API Response Latency (99th percentile)
+- ETCD No leader elections
+- Pod Latencies, Scheduling and Ready
+- Cluster Operator Health
 
 ## Tests
 
@@ -45,5 +54,49 @@ This workload creates resources such as builds and routes to stress the OpenShif
 | 55 | 33 | 495| 550 | 605 | 83 |
 | 65 | 39 | 585| 650 | 715 | 98 |
 
+*0.6 Projects per worker node*
+
+*9 configMaps per worker node*
+
+*10 clusterIPServices per worker node*
+
+*11 secrets per worker node*
+
+*1.5 deployments and replicaSets per worker node*
+
+## Running the tests
+
+1. You'll need to download the binaries from the kube-burner [github][3]
+
+    ```shell
+    wget https://github.com/cloud-bulldozer/kube-burner/releases/download/v0.16.1/kube-burner-0.16.1-Linux-x86_64.tar.gz
+    ```
+
+2. Extract the binary
+
+    ```shell
+    tar -xvzf kube-burner-0.16.1-Linux-x86_64.tar.gz
+    ```
+
+3. Set required environment variables
+
+    ```shell
+    export ES_ENDPOINT="https://endpoint.es.com" # Endpoint for elastic server. Leave blank if none
+    export JOB_ITERATIONS=8 # Match to corresponding number of projects to available worker nodes (See tables above)
+    ```
+
+4. Run test
+
+    ```shell
+    kube-burner init -c <test-config.yaml> # Make sure to capture uuid from output. Can be found as kube-burner-uuid label on all resources created
+    ```
+
+5. Remove resources created
+
+    ```shell
+    kube-burner destroy --uuid=<captured-uuid>
+    ```
+
 [1]: https://kube-burner.readthedocs.io/en/latest/
 [2]: https://github.com/cloud-bulldozer/kube-burner/tree/master/examples/workloads
+[3]: https://github.com/cloud-bulldozer/kube-burner/releases
