@@ -1,0 +1,318 @@
+Id,Name,Shape Library,Page ID,Contained By,Group,Line Source,Line Destination,Source Arrow,Destination Arrow,Status,Text Area 1,Comments
+1,Document,,,,,,,,,DRAFT,Nerc Reference Architecture,
+2,Page,,,,,,,,,,Infra Hardware/Network,
+3,Swim Lane,Flowchart Shapes,2,,,,,,,,Infra Cluster,
+4,SVGPathBlock2,,2,3:1,,,,,,,,
+5,SVGPathBlock2,,2,3:1,,,,,,,,
+6,SVGPathBlock2,,2,3:1,,,,,,,,
+7,Network card,Azure 2015,2,3:1,,,,,,,NIC 0,
+8,Network card,Azure 2015,2,3:1,,,,,,,BMC,
+9,Network card,Azure 2015,2,3:1,,,,,,,NIC 0,
+10,Network card,Azure 2015,2,3:1,,,,,,,BMC,
+11,Network card,Azure 2015,2,3:1,,,,,,,NIC 0,
+12,Network card,Azure 2015,2,3:1,,,,,,,BMC,
+13,SVGPathBlock2,,2,3:1,,,,,,,,
+14,SVGPathBlock2,,2,3:1,,,,,,,,
+15,Swim Lane,Flowchart Shapes,2,3:1,31,,,,,,BMC Network,
+16,Text,Standard,2,3:1|15:1,31,,,,,,"
+VLAN: 2170
+CIDR: 10.30.0.0/22
+Gateway: 10.30.0.1",
+17,Swim Lane,Flowchart Shapes,2,3:1,32,,,,,,Infra Baremetal Network,
+18,Text,Standard,2,3:1|17:1,32,,,,,,"
+VLAN: 2176
+CIDR: 10.30.9.0/24
+Gateway: 10.30.9.1",
+19,Swim Lane,Flowchart Shapes,2,3:1,33,,,,,,Infra OCP Ctl 2,
+20,Text,Standard,2,3:1|19:1,33,,,,,,"HostName:
+ - ctl-2.nerc-ocp-infra
+BMC HostName:
+ - ctl-2-obm.nerc-ocp-infra
+NIC 0:
+ - 10.30.9.9
+BMC:
+ - 10.30.0.9
+",
+21,Swim Lane,Flowchart Shapes,2,3:1,34,,,,,,Infra OCP Ctl 1,
+22,Text,Standard,2,3:1|21:1,34,,,,,,"HostName:
+ - ctl-1.nerc-ocp-infra
+BMC HostName:
+ - ctl-1-obm.nerc-ocp-infra
+NIC 0:
+ - 10.30.9.8
+BMC:
+ - 10.30.0.8
+",
+23,Swim Lane,Flowchart Shapes,2,3:1,35,,,,,,Infra OCP Ctl 0,
+24,Text,Standard,2,3:1|23:1,35,,,,,,"HostName:
+ - ctl-0.nerc-ocp-infra
+BMC HostName:
+ - ctl-0-obm.nerc-ocp-infra
+NIC 0:
+ - 10.30.9.7
+BMC:
+ - 10.30.0.7
+",
+25,Line,,2,,,10,13,None,Arrow,,,
+26,Line,,2,,,12,13,None,Arrow,,,
+27,Line,,2,,,7,14,None,Arrow,,,
+28,Line,,2,,,9,14,None,Arrow,,,
+29,Line,,2,,,11,14,None,Arrow,,,
+30,Line,,2,,,8,13,None,Arrow,,,
+31,Group 1,,2,,,,,,,,,
+32,Group 2,,2,,,,,,,,,
+33,Group 3,,2,,,,,,,,,
+34,Group 4,,2,,,,,,,,,
+35,Group 5,,2,,,,,,,,,
+36,Page,,,,,,,,,,Infra OpenShift Apps,
+37,Swim Lane,Flowchart Shapes,36,,,,,,,,Infra Cluster,
+38,Swim Lane,Flowchart Shapes,36,,,,,,,,Cluster Applications,
+39,Swim Lane,Flowchart Shapes,36,38:1,,,,,,,ACM,
+40,Swim Lane,Flowchart Shapes,36,38:1,,,,,,,ArgoCD,
+41,Swim Lane,Flowchart Shapes,36,38:1,,,,,,,Grafana,
+42,Swim Lane,Flowchart Shapes,36,38:1,,,,,,,Prometheus,
+43,Swim Lane,Flowchart Shapes,36,38:1,,,,,,,Vault,
+44,Swim Lane,Flowchart Shapes,36,,,,,,,,Details,
+45,SVGPathBlock2,,36,37:1,,,,,,,,
+46,SVGPathBlock2,,36,37:1,,,,,,,,
+47,SVGPathBlock2,,36,37:1,,,,,,,,
+48,Text,Standard,36,38:1|39:1,,,,,,,"URL: https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/
+API: https://api.nerc-ocp-infra.rc.fas.harvard.edu:6443
+",
+49,Text,Standard,36,38:1|40:1,,,,,,,"URL: https://openshift-gitops-server-openshift-gitops.apps.nerc-ocp-infra.rc.fas.harvard.edu/
+",
+50,Text,Standard,36,38:1|41:1,,,,,,,URL: https://grafana-openshift-monitoring.apps.nerc-ocp-infra.rc.fas.harvard.edu/,
+51,Text,Standard,36,38:1|42:1,,,,,,,URL: https://prometheus-k8s-openshift-monitoring.apps.nerc-ocp-infra.rc.fas.harvard.edu/,
+52,Text,Standard,36,38:1|43:1,,,,,,,URL: https://vault-ui-vault.apps.nerc-ocp-infra.rc.fas.harvard.edu/,
+53,Text,Standard,36,44:1,,,,,,,"URL: https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/
+API: https://api.nerc-ocp-infra.rc.fas.harvard.edu:6443",
+54,Page,,,,,,,,,,Clusters,
+55,Swim Lane,Flowchart Shapes,54,,,,,,,,Infra Cluster,
+56,Swim Lane,Flowchart Shapes,54,,,,,,,,Production Cluster,
+57,Swim Lane,Flowchart Shapes,54,,,,,,,,Test Cluster,
+58,Swim Lane,Flowchart Shapes,54,56:1,,,,,,,Control Plane,
+59,Swim Lane,Flowchart Shapes,54,55:1,,,,,,,Control Plane,
+60,ImageSearchBlock2,Standard,54,55:1,,,,,,,,
+61,ImageSearchBlock2,Standard,54,55:1,,,,,,,,
+62,ImageSearchBlock2,Standard,54,55:1,,,,,,,,
+63,User Image,User Images,54,55:1,,,,,,,,
+64,ImageSearchBlock2,Standard,54,55:1,167,,,,,,,
+65,Text,Standard,54,55:1,167,,,,,,ACM,
+66,OpenShift,User Images,54,57:1,,,,,,,,
+67,OpenShift,User Images,54,57:1,,,,,,,,
+68,OpenShift,User Images,54,57:1,,,,,,,,
+69,OpenShift,User Images,54,57:1,,,,,,,,
+70,OpenShift,User Images,54,57:1,,,,,,,,
+71,OpenShift,User Images,54,57:1,,,,,,,,
+72,OpenShift,User Images,54,57:1,,,,,,,,
+73,OpenShift,User Images,54,57:1,,,,,,,,
+74,OpenShift,User Images,54,57:1,,,,,,,,
+75,OpenShift,User Images,54,56:1,,,,,,,,
+76,OpenShift,User Images,54,56:1,,,,,,,,
+77,OpenShift,User Images,54,56:1,,,,,,,,
+78,OpenShift,User Images,54,56:1,,,,,,,,
+79,OpenShift,User Images,54,56:1,,,,,,,,
+80,OpenShift,User Images,54,56:1,,,,,,,,
+81,OpenShift,User Images,54,56:1,,,,,,,,
+82,OpenShift,User Images,54,56:1,,,,,,,,
+83,OpenShift,User Images,54,56:1,,,,,,,,
+84,OpenShift,User Images,54,56:1,,,,,,,,
+85,OpenShift,User Images,54,56:1,,,,,,,,
+86,OpenShift,User Images,54,56:1,,,,,,,,
+87,OpenShift,User Images,54,56:1,,,,,,,,
+88,OpenShift,User Images,54,56:1,,,,,,,,
+89,OpenShift,User Images,54,56:1,,,,,,,,
+90,OpenShift,User Images,54,56:1,,,,,,,,
+91,OpenShift,User Images,54,56:1,,,,,,,,
+92,OpenShift,User Images,54,56:1,,,,,,,,
+93,OpenShift,User Images,54,56:1,,,,,,,,
+94,OpenShift,User Images,54,56:1,,,,,,,,
+95,OpenShift,User Images,54,56:1,,,,,,,,
+96,OpenShift,User Images,54,56:1,,,,,,,,
+97,OpenShift,User Images,54,56:1,,,,,,,,
+98,OpenShift,User Images,54,56:1,,,,,,,,
+99,OpenShift,User Images,54,56:1,,,,,,,,
+100,OpenShift,User Images,54,56:1,,,,,,,,
+101,OpenShift,User Images,54,56:1,,,,,,,,
+102,OpenShift,User Images,54,56:1,,,,,,,,
+103,OpenShift,User Images,54,56:1,,,,,,,,
+104,OpenShift,User Images,54,56:1,,,,,,,,
+105,OpenShift,User Images,54,56:1,,,,,,,,
+106,OpenShift,User Images,54,56:1,,,,,,,,
+107,OpenShift,User Images,54,56:1,,,,,,,,
+108,OpenShift,User Images,54,56:1,,,,,,,,
+109,OpenShift,User Images,54,56:1,,,,,,,,
+110,OpenShift,User Images,54,56:1,,,,,,,,
+111,OpenShift,User Images,54,56:1,,,,,,,,
+112,OpenShift,User Images,54,56:1,,,,,,,,
+113,OpenShift,User Images,54,56:1,,,,,,,,
+114,OpenShift,User Images,54,56:1,,,,,,,,
+115,OpenShift,User Images,54,56:1,,,,,,,,
+116,OpenShift,User Images,54,56:1,,,,,,,,
+117,OpenShift,User Images,54,56:1,,,,,,,,
+118,OpenShift,User Images,54,56:1,,,,,,,,
+119,OpenShift,User Images,54,56:1,,,,,,,,
+120,OpenShift,User Images,54,56:1,,,,,,,,
+121,OpenShift,User Images,54,56:1,,,,,,,,
+122,OpenShift,User Images,54,56:1,,,,,,,,
+123,OpenShift,User Images,54,56:1,,,,,,,,
+124,OpenShift,User Images,54,56:1,,,,,,,,
+125,OpenShift,User Images,54,56:1,,,,,,,,
+126,OpenShift,User Images,54,56:1,,,,,,,,
+127,OpenShift,User Images,54,56:1,,,,,,,,
+128,OpenShift,User Images,54,56:1,,,,,,,,
+129,OpenShift,User Images,54,56:1,,,,,,,,
+130,OpenShift,User Images,54,56:1,,,,,,,,
+131,OpenShift,User Images,54,56:1,,,,,,,,
+132,OpenShift,User Images,54,56:1,,,,,,,,
+133,OpenShift,User Images,54,56:1,,,,,,,,
+134,OpenShift,User Images,54,56:1,,,,,,,,
+135,OpenShift,User Images,54,56:1,,,,,,,,
+136,OpenShift,User Images,54,56:1,,,,,,,,
+137,OpenShift,User Images,54,56:1,,,,,,,,
+138,OpenShift,User Images,54,56:1,,,,,,,,
+139,OpenShift,User Images,54,56:1,,,,,,,,
+140,OpenShift,User Images,54,56:1,,,,,,,,
+141,OpenShift,User Images,54,56:1,,,,,,,,
+142,OpenShift,User Images,54,56:1,,,,,,,,
+143,OpenShift,User Images,54,56:1,,,,,,,,
+144,OpenShift,User Images,54,56:1,,,,,,,,
+145,OpenShift,User Images,54,56:1,,,,,,,,
+146,OpenShift,User Images,54,56:1,,,,,,,,
+147,OpenShift,User Images,54,56:1,,,,,,,,
+148,OpenShift,User Images,54,56:1,,,,,,,,
+149,OpenShift,User Images,54,56:1,,,,,,,,
+150,OpenShift,User Images,54,56:1,,,,,,,,
+151,OpenShift,User Images,54,56:1,,,,,,,,
+152,OpenShift,User Images,54,56:1,,,,,,,,
+153,OpenShift,User Images,54,56:1,,,,,,,,
+154,Text,Standard,54,55:1,,,,,,,"Cluster name: nerc-ocp-infra
+Environment: infrastructure/ACM Control Nodes: 3 (Scheduleable)
+Worker Nodes: 0",
+155,Text,Standard,54,56:1,,,,,,,"Cluster name: nerc-ocp-prod
+Environment: Production Control Nodes: 3
+Worker Nodes: 86",
+156,SVGPathBlock2,,54,56:1|58:1,,,,,,,,
+157,SVGPathBlock2,,54,56:1|58:1,,,,,,,,
+158,SVGPathBlock2,,54,56:1|58:1,,,,,,,,
+159,SVGPathBlock2,,54,55:1|59:1,,,,,,,,
+160,SVGPathBlock2,,54,55:1|59:1,,,,,,,,
+161,SVGPathBlock2,,54,55:1|59:1,,,,,,,,
+162,OpenShift,User Images,54,57:1,,,,,,,,
+163,SVGPathBlock2,,54,57:1,,,,,,,,
+164,SVGPathBlock2,,54,57:1,,,,,,,,
+165,SVGPathBlock2,,54,57:1,,,,,,,,
+166,Text,Standard,54,57:1,,,,,,,"Cluster name:
+    nerc-ocp-test
+Environment:
+    test Control Nodes:
+    3
+Worker Nodes:
+    10",
+167,Group 1,,54,,,,,,,,,
+168,Page,,,,,,,,,,Production Hardware/Network,
+169,Swim Lane,Flowchart Shapes,168,,,,,,,,Production Cluster,
+170,Swim Lane,Flowchart Shapes,168,169:1,,,,,,,Control Plane,
+171,OpenShift,User Images,168,169:1,,,,,,,,
+172,OpenShift,User Images,168,169:1,,,,,,,,
+173,OpenShift,User Images,168,169:1,,,,,,,,
+174,OpenShift,User Images,168,169:1,,,,,,,,
+175,OpenShift,User Images,168,169:1,,,,,,,,
+176,OpenShift,User Images,168,169:1,,,,,,,,
+177,OpenShift,User Images,168,169:1,,,,,,,,
+178,OpenShift,User Images,168,169:1,,,,,,,,
+179,OpenShift,User Images,168,169:1,,,,,,,,
+180,OpenShift,User Images,168,169:1,,,,,,,,
+181,OpenShift,User Images,168,169:1,,,,,,,,
+182,OpenShift,User Images,168,169:1,,,,,,,,
+183,OpenShift,User Images,168,169:1,,,,,,,,
+184,OpenShift,User Images,168,169:1,,,,,,,,
+185,OpenShift,User Images,168,169:1,,,,,,,,
+186,OpenShift,User Images,168,169:1,,,,,,,,
+187,OpenShift,User Images,168,169:1,,,,,,,,
+188,OpenShift,User Images,168,169:1,,,,,,,,
+189,OpenShift,User Images,168,169:1,,,,,,,,
+190,OpenShift,User Images,168,169:1,,,,,,,,
+191,OpenShift,User Images,168,169:1,,,,,,,,
+192,OpenShift,User Images,168,169:1,,,,,,,,
+193,OpenShift,User Images,168,169:1,,,,,,,,
+194,OpenShift,User Images,168,169:1,,,,,,,,
+195,OpenShift,User Images,168,169:1,,,,,,,,
+196,OpenShift,User Images,168,169:1,,,,,,,,
+197,OpenShift,User Images,168,169:1,,,,,,,,
+198,OpenShift,User Images,168,169:1,,,,,,,,
+199,OpenShift,User Images,168,169:1,,,,,,,,
+200,OpenShift,User Images,168,169:1,,,,,,,,
+201,OpenShift,User Images,168,169:1,,,,,,,,
+202,OpenShift,User Images,168,169:1,,,,,,,,
+203,OpenShift,User Images,168,169:1,,,,,,,,
+204,OpenShift,User Images,168,169:1,,,,,,,,
+205,OpenShift,User Images,168,169:1,,,,,,,,
+206,OpenShift,User Images,168,169:1,,,,,,,,
+207,OpenShift,User Images,168,169:1,,,,,,,,
+208,OpenShift,User Images,168,169:1,,,,,,,,
+209,OpenShift,User Images,168,169:1,,,,,,,,
+210,OpenShift,User Images,168,169:1,,,,,,,,
+211,OpenShift,User Images,168,169:1,,,,,,,,
+212,OpenShift,User Images,168,169:1,,,,,,,,
+213,OpenShift,User Images,168,169:1,,,,,,,,
+214,OpenShift,User Images,168,169:1,,,,,,,,
+215,OpenShift,User Images,168,169:1,,,,,,,,
+216,OpenShift,User Images,168,169:1,,,,,,,,
+217,OpenShift,User Images,168,169:1,,,,,,,,
+218,OpenShift,User Images,168,169:1,,,,,,,,
+219,OpenShift,User Images,168,169:1,,,,,,,,
+220,OpenShift,User Images,168,169:1,,,,,,,,
+221,OpenShift,User Images,168,169:1,,,,,,,,
+222,OpenShift,User Images,168,169:1,,,,,,,,
+223,OpenShift,User Images,168,169:1,,,,,,,,
+224,OpenShift,User Images,168,169:1,,,,,,,,
+225,OpenShift,User Images,168,169:1,,,,,,,,
+226,OpenShift,User Images,168,169:1,,,,,,,,
+227,OpenShift,User Images,168,169:1,,,,,,,,
+228,OpenShift,User Images,168,169:1,,,,,,,,
+229,OpenShift,User Images,168,169:1,,,,,,,,
+230,OpenShift,User Images,168,169:1,,,,,,,,
+231,OpenShift,User Images,168,169:1,,,,,,,,
+232,OpenShift,User Images,168,169:1,,,,,,,,
+233,OpenShift,User Images,168,169:1,,,,,,,,
+234,OpenShift,User Images,168,169:1,,,,,,,,
+235,OpenShift,User Images,168,169:1,,,,,,,,
+236,OpenShift,User Images,168,169:1,,,,,,,,
+237,OpenShift,User Images,168,169:1,,,,,,,,
+238,OpenShift,User Images,168,169:1,,,,,,,,
+239,OpenShift,User Images,168,169:1,,,,,,,,
+240,OpenShift,User Images,168,169:1,,,,,,,,
+241,OpenShift,User Images,168,169:1,,,,,,,,
+242,OpenShift,User Images,168,169:1,,,,,,,,
+243,OpenShift,User Images,168,169:1,,,,,,,,
+244,OpenShift,User Images,168,169:1,,,,,,,,
+245,OpenShift,User Images,168,169:1,,,,,,,,
+246,OpenShift,User Images,168,169:1,,,,,,,,
+247,OpenShift,User Images,168,169:1,,,,,,,,
+248,OpenShift,User Images,168,169:1,,,,,,,,
+249,OpenShift,User Images,168,169:1,,,,,,,,
+250,SVGPathBlock2,,168,169:1|170:1,,,,,,,,
+251,SVGPathBlock2,,168,169:1|170:1,,,,,,,,
+252,SVGPathBlock2,,168,169:1|170:1,,,,,,,,
+253,SVGPathBlock2,,168,169:1,,,,,,,,
+254,SVGPathBlock2,,168,169:1,,,,,,,,
+255,Text,Standard,168,169:1,,,,,,,"Cluster VLAN: 2172
+Cluster CIDR: 10.30.6.0/23 Gateway: 10.30.6.1
+
+",
+256,Text,Standard,168,169:1,,,,,,,"Storage VLAN: 2173
+Storage CIDR: 10.30.10.0/23 Gateway: 10.30.10.1
+
+",
+257,Text,Standard,168,169:1,,,,,,,"Cluster Limits
+
+Theoretical limits:
+Based on the amount of memory and number of cpu cores available  in the control plane the production cluster should be able to handle over 500 worker nodes.
+
+For more info on scaling process and recommendations see:  https://github.com/OCP-on-NERC/docs/blob/main/cluster_scaling_and_load_testing.md",
+258,Text,Standard,168,169:1,,,,,,,"Cluster Limits
+
+Tested  limits:
+Red Hat has previously installed and operated a bare metal cluster with 117 worker nodes.
+",
