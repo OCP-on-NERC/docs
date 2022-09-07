@@ -4,6 +4,7 @@
 
 We will initially be starting out with 3 Control nodes and 5 worker nodes. From here we will scale up at intervals of 10 worker nodes per iteration until we reach the maximum number of available nodes.
 
+
 ## Cluster Scaling Considerations
 
 Based on Red Hat [documentation][4], the control plane should be able to handle 500+ nodes. The first limitation the cluster will hit is network throughput. When adding nodes make sure to do so 10 at a time and run through the scaling tests after they've been added to the cluster. Once you start seeing pod ready latency reach an unacceptable level or memory/cpu usage above 80% consider adding infra nodes to take some load off of the control plane.
@@ -104,4 +105,5 @@ This workload creates resources such as builds and routes to stress the OpenShif
 [1]: https://kube-burner.readthedocs.io/en/latest/
 [2]: https://github.com/cloud-bulldozer/kube-burner/tree/master/examples/workloads
 [3]: https://github.com/cloud-bulldozer/kube-burner/releases
+
 [4]: https://docs.openshift.com/container-platform/4.11/scalability_and_performance/recommended-host-practices.html#master-node-sizing_recommended-host-practices
