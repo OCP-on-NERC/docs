@@ -22,5 +22,6 @@ repos:
     hooks:
       - id: yamllint
         files: \.(yaml|yml)$
+        exclude: ^scale-testing/cluster-density/templates/
         types: [file, yaml]
         entry: yamllint --strict
