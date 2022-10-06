@@ -7,7 +7,7 @@ Minimum list of required items to complete initial OpenShift install phase of OC
 
 - [ ] Additional software required for installing/supporting basic production OCP (e.g. Vault) installed and running.
 
-- [ ] Admin accounts and access to OCP and additional required software/infrastucture for NERC, MOC and Red Hat admin staff created and tested.
+- [ ] Admin accounts and access to OCP and additional required software/infrastructure for NERC, MOC and Red Hat admin staff created and tested.
 
 - [ ] All NERC staff added to OCP-on-NERC github repositories.
 
@@ -15,7 +15,7 @@ Minimum list of required items to complete initial OpenShift install phase of OC
 
 - [ ] OCP interfaces required to proceed with integration for ColdFront and XDMod are installed and working as expected.
 
-- [ ] OCP dashboards needed for routine opertions and debugging are configured and available to admin users only.
+- [ ] OCP dashboards needed for routine operations and debugging are configured and available to admin users only.
 
 - [ ] Prometheus operator configured and collecting metrics for production infrastructure.
 
