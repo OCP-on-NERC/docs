@@ -12,7 +12,7 @@
 | 2175    | 10.30.12.0/24  | TEST storage backend      |
 | 2176    | 10.30.9.0/24   | INFRA baremetal network   |
 | 2177    | 10.30.13.0/24  | INFRA storage backend     |
-| 2178    | 199.94.61.0/24 | Public network            |
+| 2180    | 199.94.61.0/24 | Public network            |
 
 ## Hostnames and reserved addresses
 
