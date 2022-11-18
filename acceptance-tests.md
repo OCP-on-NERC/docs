@@ -12,14 +12,15 @@ Reference for NERC OpenStack: [https://nerc-project.github.io/nerc-docs/get-star
     * <span style="text-decoration:underline;">Steps</span>
         1. A prospective user follows the steps documented in [https://nerc-project.github.io/nerc-docs/get-started/create-a-user-portal-account/](https://nerc-project.github.io/nerc-docs/get-started/create-a-user-portal-account/) to create an account on the NERC.
 2. **Remove a user**
-    * _As an administrator, I should be able to remove a user, labels association with the user, and user identity from the cluster._
-       * _(This step is generally unnecessary, given that a user that doesn’t have authorization to any project, cannot access any allocations, therefore removing a user from allocations is generally enough.)_
-    * <span style="text-decoration:underline;">Steps</span>
-        1. A NERC admin uses a private runbook to disable/ deactivate a user from KeyCloak.
-        2. _(Optional)_ After that is done, the NERC admin uses the OpenShift CLI and runs the following:
-            1. `oc delete user &lt;username>`
-            2. `oc delete identity &lt;identity_provider>:&lt;username>`
-        3. The user can no longer access OpenShift with their credentials
+    * _As an administrator, I should be able to remove a user from their projects and allocations._
+    * Steps
+        1. A NERC admin can follow the steps documented in [What is NERC's ColdFront?](https://github.com/nerc-project/nerc-docs/blob/main/docs/get-started/get-an-allocation.md#adding-and-removing-user-from-the-project) to remove a user from a project on the NERC. A NERC admin can also use a private runbook to disable/ deactivate a user from KeyCloak.
+        2. The user can no longer access their project.
+    * Acceptance tests:
+        1. A NERC admin can follow the steps documented in [What is NERC's ColdFront?](https://github.com/nerc-project/nerc-docs/blob/main/docs/get-started/get-an-allocation.md#adding-and-removing-user-from-the-project) to remove a user from a project on the NERC.
+        2. Check that the user no longer has access to the project in OpenShift.
+            1. For a given username of `nerc-test-account` for example, [Click here to check  the user's RoleBindings](https://console-openshift-console.apps.nerc-ocp-prod.rc.fas.harvard.edu/k8s/cluster/user.openshift.io~v1~User/nerc-test-account/roles).
+            2. Verify that the given username no longer has a RoleBinding with `Role ref` of `edit`, for the project's namespaces.
 3. **Add/Remove PI privilege to a user**
     * _For any user account, the administrator should be able to add or remove PI status associated with that account.  A user may be a PI on multiple projects, but a project can have only 1 PI._
     * <span style="text-decoration:underline;">Steps</span>
