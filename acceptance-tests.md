@@ -54,10 +54,17 @@ Reference for NERC OpenStack: [https://nerc-project.github.io/nerc-docs/get-star
             2. They can navigate to an allocation, set the status to “Denied”, and update the allocation
         2. Disabling an allocation will delete the associated OpenShift namespace, which differs from OpenStack behavior which simply disables the project.
 3. **Manage a project as a PI.**
-    * _As a PI, I should be able to manage and share my project with others on the team, but no one except the PI and the administrator should be able to remove the project._
-    * <span style="text-decoration:underline;">Steps</span>
-        1. A PI can add keycloak users to a ColdFront project under the ‘users’ section in the given project ([https://nerc-project.github.io/nerc-docs/get-started/get-an-allocation/#adding-and-removing-user-from-the-project](https://nerc-project.github.io/nerc-docs/get-started/get-an-allocation/#adding-and-removing-user-from-the-project))
-        2. From here, a PI can set the user to a particular role. It seems the ‘manager’ role is the one that lets users create and remove allocations by delegating PI role/responsibilities. Some other roles should be set for other general users who are only going to use the allocated NERC resources.
+    * _As a PI, I should be able to manage and share my project with others on the team, but no one except the the administrator should be able to remove the project._
+    * Steps
+        1. A PI can add keycloak users to a ColdFront project under the `users` section in the given project ([https://nerc-project.github.io/nerc-docs/get-started/get-an-allocation/#adding-and-removing-user-from-the-project](https://nerc-project.github.io/nerc-docs/get-started/get-an-allocation/#adding-and-removing-user-from-the-project))
+        2. From here, a PI can set the user to a particular role.
+            1. The `manager` role has an `edit` role to the project, and is the one that lets users create and remove allocations by delegating PI role/responsibilities in ColdFront.
+            2. The `user` role also has an `edit` role to the project, but cannot create and remove allocations.
+    * Acceptance tests:
+        1. Because ColdFront gives the same `edit` role to a Manager and a User, you can expect all users and PIs in a project to share the same role. For a given namespace named `01234567-89ab-cdef-0123-456789abcdef`, and a given user named `nerc-test-account`, and the given role `edit`, check that the given project contains a RoleBinding with a `Role ref` of `edit`, a `Subject kind` of `User`, and a `Subject name` of `nerc-test-account` in the `oc` CLI:
+            1. `oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide`
+        2. After making any changes to user roles, check that the given project contains a RoleBinding with a `Role ref` of `edit`, a `Subject kind` of `User`, and a `Subject name` of `nerc-test-account` for all Users and PIs in the `oc` CLI:
+            1. `oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide`
 
 
 ## Manage Quota
