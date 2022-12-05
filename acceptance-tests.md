@@ -114,8 +114,12 @@ Reference for NERC OpenStack: [https://nerc-project.github.io/nerc-docs/get-star
 
 1. **Establish OpenShift cluster upgrade process**
     * _As an administrator of the cluster, I should be able to follow a set of documented instructions to help me in upgrading to newer versions of OpenShift. The rule book should also establish the process to mitigate any issues that might arise during the upgrade._
-    * <span style="text-decoration:underline;">Steps</span>
-        1. Upgrade documentation available in the documentation repository
+    * Steps
+        1. See the official [OpenShift updating clusters documentation](https://docs.openshift.com/container-platform/4.10/updating/index.html) for the version of OpenShift to which you wish to upgrade.
+        2. Follow the instructions to update the cluster.
+    * Acceptance tests:
+        1. Verify the administrator has access to the OpenShift updating clusters documentation.
+        2. You can explore cluster versions and upgrades from within the Observability dashboard. For a given cluster named `nerc-ocp-prod` from version `4.10.13` to version `4.10.15` for example, [Click here to check the `from_version` of the `cluster` type record, and the `version` of the `completed` type record to ensure the versions are what you expected](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22avg%28cluster_version%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,%20type%3D~%5C%22cluster%7Ccompleted%5C%22%7D%29%20by%20%28Time,%20cluster,%20from_version,%20type,%20version%29%22%7D%5D).
 
 
 ## Monitoring
