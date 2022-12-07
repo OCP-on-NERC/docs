@@ -373,3 +373,38 @@ Acceptance testers will require access to the following applications:
 
                 ![Observability Dashboards](img/acceptance-tests/observability-top-5-cpu.png)
         2. Not applicable at this time.
+
+
+## Data Management
+
+
+
+1. **Access operational logs for at least 30 days**
+    * _As an administrator of the cluster, I should be able to access operational logs, error messages, alerts, and other relevant data used to investigate and resolve operational issues when they are created.  I should also be able to access this information in place in the operations environment for at least 30 days following its creation._
+    * Criteria
+        1. Administrator logs, error messages, alerts, and other relevant data used to investigate and resolve operational issues in the logging Grafana and Observability Grafana instance for at least 30 days.
+    * Acceptance tests:
+        1. See the `Monitoring` and `Reporting` sections above for information about the logs, alerts, and dashboards.
+        2. We are not yet able to configure retention of Loki logs to 30 days, because the `RetentionStreamSpec` feature is not yet released in the latest Loki Operator. We plan to enable this retention feature when it becomes available. Here is an [issue where we are tracking this issue regarding log retention](https://github.com/OCP-on-NERC/operations/issues/38).
+
+2. **Access audit logs for at least 90 days**
+    * _As an administrator of the cluster, I should be able to access operational information that is specifically useful for security audits and investigations (e.g. records of privilege escalations, certificate changes, etc.) when it is created and for 90 days thereafter._
+    * Criteria
+        1. Access operational information that is specifically useful for security audits and investigations when it is created and for 90 days thereafter.
+    * Acceptance tests:
+        1. See the `Monitoring` and `Reporting` sections above for information about the logs, alerts, and dashboards.
+        2. We are not yet able to configure retention of Loki logs to 30 days, because the `RetentionStreamSpec` feature is not yet released in the latest Loki Operator. We plan to enable this retention feature when it becomes available. Here is an [issue where we are tracking this issue regarding log retention](https://github.com/OCP-on-NERC/operations/issues/38).
+
+3. **Operational data should be archived and stored securely monthly**
+    * _All operational data should be archived and stored securely outside the operations environment monthly.  This operations data will eventually be provided to researchers after appropriate procedures have been established for protecting any sensitive data and controlling researcher access to the data.  Current operations use cases do not call for deleting any archived data.  (Defining procedures for allowing researchers access to the archived data is outside the scope of this document.)_
+    * Criteria
+        1. All operational data should be archived and stored securely outside the operations environment monthly.
+    * Acceptance tests:
+        1. The NERC team will be meeting to discuss the approach and acceptance tests for this use case.
+
+4. **Operations data is archived and then removed**
+    * _Once operations data is archived, it can be removed from the operations environment._
+    * Criteria
+        1. Once operations data is archived, it can be removed from the operations environment.
+    * Acceptance tests:
+        1. The NERC team will be meeting to discuss the approach and acceptance tests for this use case.
