@@ -28,9 +28,17 @@ Acceptance testers will require access to the following applications:
                 ```
             4. For a given username of `nerc-test-account` and a namespace of `01234567-89ab-cdef-0123-456789abcdef` for example, check the user's RoleBindings exist:
                 ```bash
-                $ oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide
-                NAME               ROLE              AGE  USERS
-                nerc-test-account  ClusterRole/edit  7s   nerc-test-account
+                $ oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit
+                Name:         edit
+                Labels:       <none>
+                Annotations:  <none>
+                Role:
+                  Kind:  ClusterRole
+                  Name:  edit
+                Subjects:
+                  Kind  Name                       Namespace
+                  ----  ----                       ---------
+                  User  nerc-test-account
                 ```
             5. Verify that the given username has a RoleBinding with `Role ref` of `edit`, for the project's namespaces.
             6. Try logging into OpenShift as the user to test the Keycloak authentication.
@@ -61,9 +69,17 @@ Acceptance testers will require access to the following applications:
             2. Because ColdFront users and managers will have the same access of `edit` on the project, there is no difference in OpenShift roles between a user and a manager.
             3. For a given username of `nerc-test-account` and a namespace of `01234567-89ab-cdef-0123-456789abcdef` for example, check the user's RoleBindings exist:
                 ```bash
-                $ oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide
-                NAME               ROLE              AGE  USERS
-                nerc-test-account  ClusterRole/edit  7s   nerc-test-account
+                $ oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit
+                Name:         edit
+                Labels:       <none>
+                Annotations:  <none>
+                Role:
+                  Kind:  ClusterRole
+                  Name:  edit
+                Subjects:
+                  Kind  Name                       Namespace
+                  ----  ----                       ---------
+                  User  nerc-test-account
                 ```
             4. Verify that the given username has a RoleBinding with `Role ref` of `edit`, for the project's namespaces.
         5. Check that an OpenShift User exists, with access to the project allocations:
@@ -74,9 +90,17 @@ Acceptance testers will require access to the following applications:
             5. Because ColdFront users and managers will have the same access of `edit` on the project, there is no difference in OpenShift roles between a user and a manager.
             6. For a given username of `nerc-test-account` and a namespace of `01234567-89ab-cdef-0123-456789abcdef` for example, check the user's RoleBindings exist:
                 ```bash
-                $ oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide
-                NAME               ROLE              AGE  USERS
-                nerc-test-account  ClusterRole/edit  7s   nerc-test-account
+                $ oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit
+                Name:         edit
+                Labels:       <none>
+                Annotations:  <none>
+                Role:
+                  Kind:  ClusterRole
+                  Name:  edit
+                Subjects:
+                  Kind  Name                       Namespace
+                  ----  ----                       ---------
+                  User  nerc-test-account
                 ```
             7. Verify that the given username has a RoleBinding with `Role ref` of `edit`, for the project's namespaces.
 
@@ -130,9 +154,17 @@ Acceptance testers will require access to the following applications:
                 ```
             2. For a given username of `nerc-test-account` and a namespace of `01234567-89ab-cdef-0123-456789abcdef` for example, check the user's RoleBindings exist:
                 ```bash
-                $ oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide
-                NAME               ROLE              AGE  USERS
-                nerc-test-account  ClusterRole/edit  7s   nerc-test-account
+                $ oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit
+                Name:         edit
+                Labels:       <none>
+                Annotations:  <none>
+                Role:
+                  Kind:  ClusterRole
+                  Name:  edit
+                Subjects:
+                  Kind  Name                       Namespace
+                  ----  ----                       ---------
+                  User  nerc-test-account
                 ```
             3. Verify that the given username has a RoleBinding with `Role ref` of `edit`, for the project's namespaces.
             4. Try logging into OpenShift as the user to test the Keycloak authentication.
@@ -150,9 +182,17 @@ Acceptance testers will require access to the following applications:
                 1. As an admin in ColdFront, set the allocation status to `Denied`, and update the allocation.
                 2. Check that the RoleBinding no longer exists:
                     ```bash
-                    $ oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide
-                    NAME               ROLE              AGE  USERS
-                    ```
+                    $ oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit
+                    Name:         edit
+                    Labels:       <none>
+                    Annotations:  <none>
+                    Role:
+                      Kind:  ClusterRole
+                      Name:  edit
+                    Subjects:
+                      Kind  Name                       Namespace
+                      ----  ----                       ---------
+                        ```
         2. Validate the project was deleted, as well as the namespaces:
             1. As an admin in ColdFront, disable the allocation for the project.
             2. For a given project named `012345myproject` for example, check that the given project is no longer listed in the `oc` CLI:
@@ -174,9 +214,9 @@ Acceptance testers will require access to the following applications:
             2. The `user` role also has an `edit` role to the project, but cannot create and remove allocations.
     * Acceptance tests:
         1. Because ColdFront gives the same `edit` role to a Manager and a User, you can expect all users and PIs in a project to share the same role. For a given namespace named `01234567-89ab-cdef-0123-456789abcdef`, and a given user named `nerc-test-account`, and the given role `edit`, check that the given project contains a RoleBinding with a `Role ref` of `edit`, a `Subject kind` of `User`, and a `Subject name` of `nerc-test-account` in the `oc` CLI:
-            1. `oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide`
+            1. `oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit`
         2. After making any changes to user roles, check that the given project contains a RoleBinding with a `Role ref` of `edit`, a `Subject kind` of `User`, and a `Subject name` of `nerc-test-account` for all Users and PIs in the `oc` CLI:
-            1. `oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide`
+            1. `oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit`
 
 
 ## Manage Quota
@@ -187,7 +227,7 @@ Acceptance testers will require access to the following applications:
     * _As an administrator of the cluster, I should be able to set and modify compute, storage and object counts quotas for any project._
     * Criteria
         1. For modifying attributes, allocation change requests can be requested by navigating to the active allocation.[See the ColdFront documentation here](https://nerc-project.github.io/nerc-docs/get-started/get-an-allocation/)
-        2. From here, a PI can approve the request and a call to the acct-mgt service will be made.
+        2. From here, an admin can approve the request and a call to the acct-mgt service will be made.
             1. For setting attributes, adding a new allocation attribute triggers a call to the acct-mgt service endpoint `/projects/{project_id}/quota`.
     * Acceptance tests:
         1. As a ColdFront admin, make a request to change an allocation's attributes.
@@ -211,9 +251,17 @@ Acceptance testers will require access to the following applications:
             1. As a ColdFront admin, set the user's role to `manager`.
             2. Check the user role bindings.
                 ```bash
-                $ oc get RoleBinding -n 01234567-89ab-cdef-0123-456789abcdef -o wide
-                NAME               ROLE              AGE  USERS
-                nerc-test-account  ClusterRole/edit  7s   nerc-test-account
+                $ oc -n 01234567-89ab-cdef-0123-456789abcdef describe rolebinding/edit
+                Name:         edit
+                Labels:       <none>
+                Annotations:  <none>
+                Role:
+                  Kind:  ClusterRole
+                  Name:  edit
+                Subjects:
+                  Kind  Name                       Namespace
+                  ----  ----                       ---------
+                  User  nerc-test-account
                 ```
             3. Because ColdFront users and managers will have the same access of `edit` on the project, there is no difference in OpenShift roles between a user and a manager.
 
