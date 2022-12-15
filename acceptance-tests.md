@@ -142,7 +142,7 @@ Acceptance testers will require access to the following applications:
                 NAME                                  STATUS  AGE
                 01234567-89ab-cdef-0123-456789abcdef  Active  14m
                 ```
-            3. You can explore quotas from within the Observability dashboard. For a given project named `012345myproject`, and resource `limits.cpu` or `limits.memory` for example, [Click here to check the `value` for the type=hard (max limit) and type=used (current value)](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22kube_resourcequota%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,namespace%3D%5C%2201234567-89ab-cdef-0123-456789abcdef%5C%22,resource%3D%5C%22limits.cpu%5C%22%7D%22%7D%5D).
+            3. You can explore quotas from within the Observability dashboard. For a given project named `012345myproject`, and resource `limits.cpu` or `limits.memory` for example, [Click here to check the `value` for the type=hard (max limit) and type=used (current value)](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22kube_resourcequota%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,namespace%3D%5C%2201234567-89ab-cdef-0123-456789abcdef%5C%22,resource%3D%5C%22limits.cpu%5C%22%7D%22%7D%5D).
 
                 ![Observability Limits CPU](img/acceptance-tests/limits-cpu.png)
         6. Check that an OpenShift User exists, with access to the project allocations:
@@ -232,7 +232,7 @@ Acceptance testers will require access to the following applications:
     * Acceptance tests:
         1. As a ColdFront admin, make a request to change an allocation's attributes.
         2. As a ColdFront admin, approve the request.
-            1. You can explore quotas from within the Observability dashboard. For a given project named `012345myproject`, and resource `limits.cpu` or `limits.memory` for example, [Click here to check the `value` has been updated for the type=hard (max limit) and type=used (current value)](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22kube_resourcequota%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,namespace%3D%5C%2201234567-89ab-cdef-0123-456789abcdef%5C%22,resource%3D%5C%22limits.cpu%5C%22%7D%22%7D%5D).
+            1. You can explore quotas from within the Observability dashboard. For a given project named `012345myproject`, and resource `limits.cpu` or `limits.memory` for example, [Click here to check the `value` has been updated for the type=hard (max limit) and type=used (current value)](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22kube_resourcequota%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,namespace%3D%5C%2201234567-89ab-cdef-0123-456789abcdef%5C%22,resource%3D%5C%22limits.cpu%5C%22%7D%22%7D%5D).
 
                 ![Observability Limits CPU](img/acceptance-tests/limits-cpu.png)
 
@@ -301,7 +301,7 @@ Acceptance testers will require access to the following applications:
     * Acceptance tests:
         1. Add new nodes to the cluster.
             1. [Here is the spreadsheet for managing new hardware](https://docs.google.com/spreadsheets/d/1piV0GKyVG6KznnXCLJO4MgwSYCl9dV4VEMuY7M1_bnM/edit?usp=share_link).
-            2. [Click here to view the ACM Observability Grafana dashboards](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/). These dashboards provide insights into Control Plane Health, Optimization, Capacity, Utilization and more. You can change the timespan in the top right to show results in terms of minutes, hours, days, months or years.
+            2. [Click here to view the ACM Observability Grafana dashboards](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/). These dashboards provide insights into Control Plane Health, Optimization, Capacity, Utilization and more. You can change the timespan in the top right to show results in terms of minutes, hours, days, months or years.
 
                 ![Observability Dashboards](img/acceptance-tests/observability-dashboards.png)
 2. **Track faulty hardware**
@@ -311,7 +311,7 @@ Acceptance testers will require access to the following applications:
     * Acceptance tests:
         1. Track faulty nodes that need to be replaced.
             1. [Here is the spreadsheet for managing faulty hardware](https://docs.google.com/spreadsheets/d/1i2pxVyaSn2XxP-kWJyUmfJJZm8v63YmYBoeOP8M_BWg/edit?usp=share_link).
-            2. [Click here to view the ACM Observability Grafana dashboards](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/). These dashboards provide insights into Control Plane Health, Optimization, Capacity, Utilization and more. You can change the timespan in the top right to show results in terms of minutes, hours, days, months or years.
+            2. [Click here to view the ACM Observability Grafana dashboards](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/). These dashboards provide insights into Control Plane Health, Optimization, Capacity, Utilization and more. You can change the timespan in the top right to show results in terms of minutes, hours, days, months or years.
 
                 ![Observability Dashboards](img/acceptance-tests/observability-dashboards.png)
 
@@ -327,7 +327,7 @@ Acceptance testers will require access to the following applications:
         2. Follow the instructions to update the cluster.
     * Acceptance tests:
         1. Verify the administrator has access to the OpenShift updating clusters documentation.
-        2. You can explore cluster versions and upgrades from within the Observability dashboard. For a given cluster named `nerc-ocp-prod` from version `4.10.13` to version `4.10.15` for example, [Click here to check the `from_version` of the `cluster` type record, and the `version` of the `completed` type record to ensure the versions are what you expected](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22avg%28cluster_version%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,%20type%3D~%5C%22cluster%7Ccompleted%5C%22%7D%29%20by%20%28Time,%20cluster,%20from_version,%20type,%20version%29%22%7D%5D).
+        2. You can explore cluster versions and upgrades from within the Observability dashboard. For a given cluster named `nerc-ocp-prod` from version `4.10.13` to version `4.10.15` for example, [Click here to check the `from_version` of the `cluster` type record, and the `version` of the `completed` type record to ensure the versions are what you expected](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22avg%28cluster_version%7Bcluster%3D%5C%22nerc-ocp-prod%5C%22,%20type%3D~%5C%22cluster%7Ccompleted%5C%22%7D%29%20by%20%28Time,%20cluster,%20from_version,%20type,%20version%29%22%7D%5D).
 
 ## Monitoring
 
@@ -372,15 +372,15 @@ Acceptance testers will require access to the following applications:
         1. See the available logs and metrics:
 
             1. Available logs:
-                1. [Click here to visit the cpu usage logs for dex](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22dex%5C%22%7D%22%7D%5D).
-                2. [Click here to visit the cpu usage logs for gitops](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-gitops%5C%22%7D%22%7D%5D).
-                2. [Click here to visit the cpu usage logs for grafana](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22grafana%5C%22%7D%22%7D%5D).
+                1. [Click here to visit the cpu usage logs for dex](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22dex%5C%22%7D%22%7D%5D).
+                2. [Click here to visit the cpu usage logs for gitops](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-gitops%5C%22%7D%22%7D%5D).
+                2. [Click here to visit the cpu usage logs for grafana](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22grafana%5C%22%7D%22%7D%5D).
 
                     ![Observability CPU Usage](img/acceptance-tests/observability-cpu-usage-grafana.png)
-                3. [Click here to visit the cpu usage logs for logging](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-logging%5C%22%7D%22%7D%5D).
-                4. [Click here to visit the cpu usage logs for loki](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-operators-redhat%5C%22%7D%22%7D%5D).
-                5. [Click here to visit the cpu usage logs for vault](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22vault%5C%22%7D%22%7D%5D).
-                6. [Click here to visit the cpu usage logs for xdmod](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22xdmod%5C%22%7D%22%7D%5D).
+                3. [Click here to visit the cpu usage logs for logging](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-logging%5C%22%7D%22%7D%5D).
+                4. [Click here to visit the cpu usage logs for loki](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-operators-redhat%5C%22%7D%22%7D%5D).
+                5. [Click here to visit the cpu usage logs for vault](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22vault%5C%22%7D%22%7D%5D).
+                6. [Click here to visit the cpu usage logs for xdmod](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22xdmod%5C%22%7D%22%7D%5D).
 
             2. Available metrics:
 
@@ -400,7 +400,7 @@ Acceptance testers will require access to the following applications:
     * Acceptance tests:
         1. As an administrator, check that the XDMoD utilization of OpenShift resources matches the cpu and memory reported in ACM Observability:
             1. As an admin in XDMoD, view the reports for OpenShift resources.
-            2. [Click here to view the ACM Observability Grafana dashboards](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/). These dashboards provide insights into Control Plane Health, Optimization, Capacity, Utilization and more. You can change the timespan in the top right to show results in terms of minutes, hours, days, months or years.
+            2. [Click here to view the ACM Observability Grafana dashboards](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/). These dashboards provide insights into Control Plane Health, Optimization, Capacity, Utilization and more. You can change the timespan in the top right to show results in terms of minutes, hours, days, months or years.
 
                 ![Observability Dashboards](img/acceptance-tests/observability-dashboards.png)
 2. **Track/report usage of the project**
@@ -411,13 +411,13 @@ Acceptance testers will require access to the following applications:
     * Acceptance tests:
         1. As an administrator, check that the XDMoD utilization of project cpu and memory matches the cpu and memory reported for projects in ACM Observability:
             1. As an admin in XDMoD, view the reports for OpenShift projects.
-            2. [Click here to view the memory usage of projects over time](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22namespace:container_memory_usage_bytes:sum%22%7D%5D).
+            2. [Click here to view the memory usage of projects over time](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22namespace:container_memory_usage_bytes:sum%22%7D%5D).
 
                 ![Observability Dashboards](img/acceptance-tests/observability-memory-usage-namespace.png)
-            3. [Click here to view the cpu usage of the projects over time](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum%22%7D%5D).
+            3. [Click here to view the cpu usage of the projects over time](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum%22%7D%5D).
 
                 ![Observability Dashboards](img/acceptance-tests/observability-cpu-usage-grafana.png)
-            4. [Click here to show the projects using the top 5 CPU usage at each point in time](https://multicloud-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/grafana/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22topk%285,%20%281%20-%20avg%28rate%28node_namespace_pod_container:container_cpu_usage_seconds_total:sum%7B%7D%5B$__rate_interval%5D%29%29%20by%20%28namespace%29%29%29%22%7D%5D).
+            4. [Click here to show the projects using the top 5 CPU usage at each point in time](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22topk%285,%20%281%20-%20avg%28rate%28node_namespace_pod_container:container_cpu_usage_seconds_total:sum%7B%7D%5B$__rate_interval%5D%29%29%20by%20%28namespace%29%29%29%22%7D%5D).
 
                 ![Observability Dashboards](img/acceptance-tests/observability-top-5-cpu.png)
         2. Not applicable at this time.
