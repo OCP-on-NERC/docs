@@ -345,11 +345,17 @@ Acceptance testers will require access to the following applications:
 2. **Logging**
     * _As an administrator of the cluster, I should be able to track all the events in the cluster using the logging system in OpenShift._
     * Criteria
-        1. [Click here to visit the Logging Grafana instance](https://logging-grafana.apps.nerc-ocp-infra.rc.fas.harvard.edu).
-        2. Click on the `Explore` button which looks like a compass on the left side. At the top of that page, you can select from the dropdown the infrastructure, audit or application logs. You can then use the Log Browser to browse the different labels like kubernetes_host and select a value for a tag to filter in on actual search results. Continue to add more labels and values to narrow in on the logs you wish to see.
-        3. You can build custom dashboards and alerts in this Logging Grafana instance.
+        1. [Click here to visit the Multi Cluster Logging](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs).
+        2. You can easily filter by recent date, or date range in the past.
+        3. You can easily filter by content, namespaces, pods, and containers.
+        4. You can also filter by log levels: critical, error, warning, info, debug, trace, unknown.
+        5. Click "Show Query" to add more advanced filters like cluster ID:
+            1. [Here are the logs for the infra cluster](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs?q=%7B+log_type+%3D%7E+%22.%2B%22+%7D+%7C+json+%7C+openshift_cluster_id%3D%22b3c6e302-f119-4adb-bc48-e04c6aa2eaa5%22), you can also add the following query to the end of your log query to filter on infra cluster logs: ` | openshift_cluster_id="b3c6e302-f119-4adb-bc48-e04c6aa2eaa5"`
+            2. [Here are the logs for the prod cluster](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs?q={+log_type+%3D~+%22.%2B%22+}+|+json+|+openshift_cluster_id%3D%22fcb727d6-3e61-4d23-913d-756cf41c7982%22), you can also add the following query to the end of your log query to filter on infra cluster logs: ` | openshift_cluster_id="fcb727d6-3e61-4d23-913d-756cf41c7982"`
+        6. NERC Admins have access to application logs.
+        7. Infrastructure and audit logs have always been reserved to cluster admins in OpenShift Logging ( even on the old stack with Elasticsearch). LokiStack is best configured for admin access via a group (currently we support three dedicated names cluster-admin, dedicated-admin and the standard group for kubeadmin). These groups require a ClusterRoleBinding to the ClusterAdmin ClusterRole.
     * Acceptance tests:
-        1. [Click here to visit the Logging Grafana instance](https://logging-grafana.apps.nerc-ocp-infra.rc.fas.harvard.edu).
+        1. [Click here to visit the Multi Cluster Logging](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs).
         2. Explore the logs as described and ensure you are finding the logs you are looking for.
 
             ![Application Logging](img/acceptance-tests/application-logging.png)

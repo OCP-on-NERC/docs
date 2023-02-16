@@ -34,5 +34,5 @@ pre-commit install
 
 ## Observability Monitoring and Cluster Logging
 
-- To learn more about the project's [Advanced Cluster Management Observability Monitoring click here](monitoring.md)
-- To learn more about the project's [OpenShift Cluster Logging with Loki click here](logging.md)
+- To learn more about the project's [Advanced Cluster Management Observability Monitoring click here](monitoring-and-logging.md#monitoring)
+- To learn more about the project's [OpenShift Cluster Logging with Loki click here](monitoring-and-logging.md#logging)
