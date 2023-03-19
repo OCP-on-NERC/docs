@@ -2,12 +2,12 @@
 # Quick Links
 
 - [ACM Observability Monitoring Grafana Dashboard](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu)
-- [Cluster Logging with Loki Grafana Dashboard](https://logging-grafana.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore)
+- [Multi Cluster Logging with Loki Operator](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs)
 - [OpenShift Data Foundations Ceph Storage Percent Used in OpenShift Monitoring](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/query-browser?query0=sum%28%28kubelet_volume_stats_used_bytes+*+on+%28namespace%2Cpersistentvolumeclaim%29+group_right%28%29+kube_pod_spec_volumes_persistentvolumeclaims_info%29+*+on+%28namespace%2Cpersistentvolumeclaim%29+group_left%28storageclass%2C+provisioner%29+%28kube_persistentvolumeclaim_info+*+on+%28storageclass%29++group_left%28provisioner%29+kube_storageclass_info+%7Bprovisioner%3D%7E%22%28.*rbd.csi.ceph.com%29%7C%28.*cephfs.csi.ceph.com%29%7C%28ceph.rook.io%2Fblock%29%22%7D%29%29%2Fsum%28%28kube_persistentvolumeclaim_resource_requests_storage_bytes+*+on+%28namespace%2Cpersistentvolumeclaim%29+group_right%28%29+kube_pod_spec_volumes_persistentvolumeclaims_info%29+*+on+%28namespace%2Cpersistentvolumeclaim%29+group_left%28storageclass%2C+provisioner%29+%28kube_persistentvolumeclaim_info+*+on+%28storageclass%29++group_left%28provisioner%29+kube_storageclass_info+%7Bprovisioner%3D%7E%22%28.*rbd.csi.ceph.com%29%7C%28.*cephfs.csi.ceph.com%29%7C%28ceph.rook.io%2Fblock%29%22%7D%29%29)
 
 # Monitoring
 
-- Monitoring in the cluster is provided by the Red Hat [Advanced Cluster Management Operator here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/open-cluster-management/operators.coreos.com~v1alpha1~ClusterServiceVersion/advanced-cluster-management.v2.6.3).
+- Monitoring in the cluster is provided by the Red Hat [Advanced Cluster Management Operator here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/operators.coreos.com~v1alpha1~ClusterServiceVersion).
 
 ## MultiClusterObservability component
 - The ACM MultiClusterObservability component allows us to configure the storage class, storage size, rule storage size, receive storage size, compact storage size, alert manager storage size, metric object storage bucket, interval, and downsampling of the observability. It also allows us to configure the replicas and node selectors for each of the observability components (store, receive, grafana, query, alert manager, store memcached, RBAC query proxy, observatorium API, query frontend, rule, and query frontend memcached. See the [Multi Cluster Observability component here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/cluster/observability.open-cluster-management.io~v1beta2~MultiClusterObservability/observability).
@@ -43,7 +43,7 @@ You can access many metrics for pods of applications in a namespace. See some of
 - [Click here to visit the cpu usage logs for gitops](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-gitops%5C%22%7D%22%7D%5D).
 - [Click here to visit the cpu usage logs for grafana](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22grafana%5C%22%7D%22%7D%5D).
 - [Click here to visit the cpu usage logs for logging](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-logging%5C%22%7D%22%7D%5D).
-- [Click here to visit the cpu usage logs for loki](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-operators-redhat%5C%22%7D%22%7D%5D).
+- [Click here to visit the cpu usage logs for loki](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22openshift-logging%5C%22%7D%22%7D%5D).
 - [Click here to visit the cpu usage logs for vault](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22vault%5C%22%7D%22%7D%5D).
 - [Click here to visit the cpu usage logs for xdmod](https://grafana-open-cluster-management-observability.apps.nerc-ocp-infra.rc.fas.harvard.edu/explore?orgId=1&left=%5B%22now-1h%22,%22now%22,%22Observatorium%22,%7B%22exemplar%22:true,%22expr%22:%22node_namespace_pod_container:container_cpu_usage_seconds_total:sum_rate%7Bnamespace%3D%5C%22xdmod%5C%22%7D%22%7D%5D).
 
@@ -96,24 +96,18 @@ Here are some useful links to the MultiClusterObservability documentation:
 
 ## Logging Operators
 
-- Logging in the cluster is provided by the Red Hat [Red Hat OpenShift Logging here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/operators.coreos.com~v1alpha1~ClusterServiceVersion/cluster-logging.5.5.5).
-- We combine the OpenShift Logging Operator with the [Loki Operator here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-operators-redhat/operators.coreos.com~v1alpha1~Subscription/loki-operator), so that the Logging Operator sends the infrastructure, audit, and application logs to the Loki Operator where they are stored in an Object Bucket.
-- The OpenShift Logging Operator has a dependency on the [Elasticsearch Operator here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-operators-redhat/operators.coreos.com~v1alpha1~Subscription/elasticsearch-operator). Whether you use Elasticsearch for storing logs or using Loki, you still need the Elasticsearch Operator installed for required dependent CustomResourceDefinitions.
+- Logging in the cluster is provided by the Red Hat [Red Hat OpenShift Logging here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/operators.coreos.com~v1alpha1~ClusterServiceVersion).
+- We combine the OpenShift Logging Operator with the [Loki Operator here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/operators.coreos.com~v1alpha1~ClusterServiceVersion), so that the Logging Operator sends the infrastructure, audit, and application logs to the Loki Operator where they are stored in an Object Bucket.
+- The OpenShift Logging Operator has a dependency on the [Elasticsearch Operator here](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/operators.coreos.com~v1alpha1~ClusterServiceVersion). Whether you use Elasticsearch for storing logs or using Loki, you still need the Elasticsearch Operator installed for required dependent CustomResourceDefinitions.
 
 ### Loki operator
 
-- The Loki Operator allows you to set up LokiStacks, AlertingRules, RecordingRules, and RulerConfigs based on your cluster logs for infrastructure, audit, and applications. See the [ Loki Operator here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-operators-redhat/operators.coreos.com~v1alpha1~ClusterServiceVersion/loki-operator.5.5.5)
-- Setting up a LokiStack allows you to configure the size of a cluster logging system that you desire in terms of storage and replicas. [ LokiStack here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-operators-redhat/loki.grafana.com~v1~LokiStack/lokistack)
+- The Loki Operator allows you to set up LokiStacks, AlertingRules, RecordingRules, and RulerConfigs based on your cluster logs for infrastructure, audit, and applications. See the [ Loki Operator here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/operators.coreos.com~v1alpha1~ClusterServiceVersion)
+- Setting up a LokiStack allows you to configure the size of a cluster logging system that you desire in terms of storage and replicas. [ LokiStack here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/loki.grafana.com~v1~LokiStack/logging-loki)
 - Setting up a LokiStack involves configuring persistent storage by storageClassName for Persistent Volume Claims. [ ocs-external-storagecluster-ceph-rbd storage class here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/cluster/storageclasses/ocs-external-storagecluster-ceph-rbd)
-- Setting up a LokiStack involves configuring object storage by a secret named "thanos-object-storage" in the "openshift-operators-redhat" namespace containing the access_key_id, access_key_secret, bucketnames, and endpoint of the object storage.
-- The object storage for Loki is provided by OpenShift Data Foundations. See the [ openshift-operators-redhat-objectbucketclaim Object Bucket Claim here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-operators-redhat/objectbucket.io~v1alpha1~ObjectBucketClaim/openshift-operators-redhat-objectbucketclaim)
-
-### Grafana operator
-
-- The Grafana Operator allows you to set up Grafana instances, datasources, dashboards, and notification channels. See the [ Grafana Operator here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/grafana/operators.coreos.com~v1alpha1~ClusterServiceVersion/grafana-operator.v4.8.0)
-- We configure a logging-grafana Grafana instance. See the [ Logging Grafana instance here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/grafana/clusterserviceversions/grafana-operator.v4.8.0/integreatly.org~v1alpha1~Grafana/logging-grafana)
-- We configure a loki-datasource for Grafana to access the Loki Cluster Logs. See the [ Loki Datasource here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/grafana/clusterserviceversions/grafana-operator.v4.8.0/integreatly.org~v1alpha1~GrafanaDataSource/loki-datasource)
-- The [ Grafana Dashboard for Cluster Logs is available here ](https://logging-grafana.apps.nerc-ocp-infra.rc.fas.harvard.edu)
+- Setting up a LokiStack involves configuring object storage by a secret named "thanos-object-storage" in the "openshift-logging" namespace containing the access_key_id, access_key_secret, bucketnames, and endpoint of the object storage.
+- The object storage for Loki is provided by OpenShift Data Foundations. See the [ openshift-logging-objectbucketclaim Object Bucket Claim here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/k8s/ns/openshift-logging/objectbucket.io~v1alpha1~ObjectBucketClaim/openshift-logging-objectbucketclaim)
+- The [ The infra and prod Cluster Logs are available on the infra cluster here ](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs)
 
 
 ## Tracking events in the Logging System
@@ -122,9 +116,15 @@ As an administrator of the cluster, I should be able to track all the events in 
 
 ### Steps
 
-- [Click here to visit the Logging Grafana instance](https://logging-grafana.apps.nerc-ocp-infra.rc.fas.harvard.edu).
-- Click on the "Explore" button which looks like a compass on the left side. At the top of that page, you can select from the dropdown the infrastructure, audit, or application logs. You can then use the Log Browser to browse the different labels like kubernetes_host and select a value for a tag to filter in on actual search results. Continue to add more labels and values to narrow in on the logs you wish to see.
-- You can build custom dashboards and alerts in this Logging Grafana instance.
+- [Click here to visit the Logs](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs).
+- You can easily filter by recent date, or date range in the past.
+- You can easily filter by content, namespaces, pods, and containers.
+- You can also filter by log levels: critical, error, warning, info, debug, trace, unknown.
+- Click "Show Query" to add more advanced filters like cluster ID:
+    - [Here are the logs for the infra cluster](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs?q=%7B+log_type+%3D%7E+%22.%2B%22+%7D+%7C+json+%7C+openshift_cluster_id%3D%22b3c6e302-f119-4adb-bc48-e04c6aa2eaa5%22), you can also add the following query to the end of your log query to filter on infra cluster logs: ` | openshift_cluster_id="b3c6e302-f119-4adb-bc48-e04c6aa2eaa5"`
+    - [Here are the logs for the prod cluster](https://console-openshift-console.apps.nerc-ocp-infra.rc.fas.harvard.edu/monitoring/logs?q={+log_type+%3D~+%22.%2B%22+}+|+json+|+openshift_cluster_id%3D%22fcb727d6-3e61-4d23-913d-756cf41c7982%22), you can also add the following query to the end of your log query to filter on infra cluster logs: ` | openshift_cluster_id="fcb727d6-3e61-4d23-913d-756cf41c7982"`
+- NERC Admins have access to application logs.
+- Infrastructure and audit logs have always been reserved to cluster admins in OpenShift Logging ( even on the old stack with Elasticsearch). LokiStack is best configured for admin access via a group (currently we support three dedicated names cluster-admin, dedicated-admin and the standard group for kubeadmin). These groups require a ClusterRoleBinding to the ClusterAdmin ClusterRole.
 
 ## Cluster Logging documentation
 
