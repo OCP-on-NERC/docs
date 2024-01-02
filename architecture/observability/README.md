@@ -41,20 +41,20 @@ The architecture diagram below is a graphical overview of the observability solu
 
 The following technologies have been chosen for this solution:
 
-Red Hat Advanced Cluster Management helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.  
+**Red Hat Advanced Cluster Management (RHACM):** This component helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.  
 
-Red Hat Advanced Cluster Management Observability Service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. gets deployed automatically to each cluster when the service is enabled. 
+**Red Hat Advanced Cluster Management Observability Service:** The observability service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. gets deployed automatically to each cluster when the service is enabled. 
 
-Thanos aggregates and stores all the metrics received from all the Prometheus instances from the managed clusters into an object storage, such that it can then support dashboards that can offer a holistic view of the fleet of managed clusters.
+**Thanos:** Thanos aggregates and stores all the metrics received from all the Prometheus instances from the managed clusters into an object storage, such that it can then support dashboards that can offer a holistic view of the fleet of managed clusters.
 
-Metrics Collector collects and aggregates the metrics data forwarded by the Prometheus instance. It then uses the RHACM Observability Controller API to push data to the RHACM hub cluster.
+**Metrics Collector:** The metric collector does exactly what that name says, it collects and aggregates the metrics data forwarded by the Prometheus instance. It then uses the RHACM Observability Controller API to push data to the RHACM hub cluster.
 
-Prometheus comes with OpenShift Container Platform and monitors all the cluster components and forwards the metrics data to the Metrics Collector or to the Grafana instance local to the cluster. 
+**Prometheus:** Prometheus is native to OpenShift Container Platform and monitors all the cluster components and forwards the metrics data to the Metrics Collector or to the Grafana instance local to the cluster. 
  
-Grafana is being utilized to provide dashboard(s) for visibility to the end-to-end platform metrics for all the clusters through a single pane of glass. Grafana comes out of the box as part of the RHACM Observability stack and is installed during RHACM installation process.
+**Grafana:** Grafana is being utilized to provide dashboard(s) for visibility to the end-to-end platform metrics for all the clusters through a single pane of glass. Grafana comes out of the box as part of the RHACM Observability stack and is installed during RHACM installation process.
 
-Red Hat OpenShift Data Foundation is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
+**Red Hat OpenShift Data Foundation (ODF):** ODF is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
 
-VictoriaMetrics offers an option it is configured to go to a Backup Object Bucket, and on the infra side, the metrics go to a separate metrics bucket with retention.
+**VictoriaMetrics:** VictoriaMetrics offers an option it is configured to go to a Backup Object Bucket, and on the infra side, the metrics go to a separate metrics bucket with retention.
 
-Alertmanager takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Altermanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for actioning on the alerts.
+**RHACM Alertmanager:** The Alertmanager takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Altermanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for actioning on the alerts.
