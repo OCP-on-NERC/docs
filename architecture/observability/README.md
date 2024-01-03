@@ -59,4 +59,4 @@ The following technologies have been chosen for this solution:
 
 **VictoriaMetrics:** VictoriaMetrics offers an option it is configured to go to a Backup Object Bucket, and on the infra side, the metrics go to a separate metrics bucket with retention.
 
-**Alertmanager:** The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Altermanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
+**Alertmanager:** The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
