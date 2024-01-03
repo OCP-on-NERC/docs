@@ -9,7 +9,7 @@ Red Hat Advanced Cluster Management (RHACM) Observability provides end-to-end vi
 
 The RHACM Hub cluster leverages two main services, Thanos and Observatorium in conjunction with Grafana to deliver an end-to-end single pane view for platform metrics for all managed clusters. Observatorium API enables connectivity and access to Thanos and helps extract the metrics data from all the Prometheus instances in the managed clusters and pushes them into the Object storage leveraging Thanos. Thanos helps  store the metrics data in a predefined object storage such as Red Hat OpenShift Data Foundation (ODF).
 
-Ultimately, the aggregated metrics from all the clusters are served up in the Grafana dashboard.  
+Ultimately, the aggregated metrics from all the clusters are served up in the Grafana dashboard.
 
 Observability is included with the RHACM installation, however the service must be enabled in order to use it. Following are the steps to enable observability service in the RHACM Hub cluster:
 
@@ -33,7 +33,7 @@ Observability is included with the RHACM installation, however the service must 
 6. The Observability cluster similar to the Infrastructure cluster will also utilize it’s local Prometheus instance and push it’s platform metrics over to the ACM Hub using the local Metrics Collector
 7. Configure ACM Alert Manager to resolve duplicate alerts through its dedupe process, group them and route the alerts to the appropriate receiving tool such as PagerDuty, DataDog, Splunk, email, etc.
 
-The architecture diagram below is a graphical overview of the observability solution.  
+The architecture diagram below is a graphical overview of the observability solution.
 
 # Architecture Diagram
 
@@ -43,7 +43,7 @@ The architecture diagram below is a graphical overview of the observability solu
 
 The following technologies have been chosen for this solution:
 
-**Red Hat Advanced Cluster Management (RHACM):** This component helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.  
+**Red Hat Advanced Cluster Management (RHACM):** This component helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.
 
 **Red Hat Advanced Cluster Management Observability Service:** The observability service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. gets deployed automatically to each cluster when the service is enabled.
 
