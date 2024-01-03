@@ -45,7 +45,7 @@ The following technologies have been chosen for this solution:
 
 **Red Hat Advanced Cluster Management (RHACM):** This component helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.
 
-**Red Hat Advanced Cluster Management Observability Service:** The observability service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. gets deployed automatically to each cluster when the service is enabled.
+**Red Hat Advanced Cluster Management Observability Service:** The observability service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. The service gets deployed automatically to each cluster when Observability is enabled in RHACM.
 
 **Thanos:** Thanos aggregates and stores all the metrics received from all the Prometheus instances from the managed clusters into an object storage, such that it can then support dashboards that can offer a holistic view of the fleet of managed clusters.
 
