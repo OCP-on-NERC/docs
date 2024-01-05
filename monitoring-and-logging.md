@@ -7,6 +7,7 @@
 
 ## Switching to new Observability Cluster - Design, Current Status & Changes
 - Design: [Logging System](https://github.com/OCP-on-NERC/docs/blob/main/architecture/logging/portfolio.md)
+- Design: [Observability Architecture](https://github.com/OCP-on-NERC/docs/blob/main/architecture/observability/README.md)
 
 # Monitoring
 
