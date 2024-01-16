@@ -37,7 +37,7 @@ The architecture diagram below is a graphical overview of the observability solu
 
 # Architecture Diagram
 
-![plot](./img/Observability-Architecture.png)
+![plot](./img/Observability-Architecture-v2.png)
 
 # Technology
 
