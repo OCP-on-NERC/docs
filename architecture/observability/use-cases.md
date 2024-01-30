@@ -1,0 +1,51 @@
+# Observability
+
+## Who, Why, What, When, How Often, How, Where
+Goal of this document is to think about the different users and usecases for observability in this setup for NERC.
+The focus will not be on a general view of all possible personas and usecases, but rather on the usecases that are most relevant to the NERC usecase.
+For sure, some universal ideas will be covered and can be used as a starting point for other approaches.
+Every topic should also covering musts, possible problems, what-not-to, and outlooks.
+
+## Who
+This will cover the personas
+
+## Why
+This will cover the needed insiggtr
+
+## What
+This will cover the product, used by the receiver
+
+## When
+This will cover the possible trigger, alerts; from the inside (treshold, limits, errors, ...) and outside(time, events, ...)
+
+## How Often
+This will cover the frequency of the alerts, separating noise from information.
+Being aware of status (vital signs) as well as trends (change in values) will be important.
+### Ideas:
+- logarithmic scale triggering
+- ISO fallback
+
+## How
+This will cover, how someone,something will be informed.
+Channels, places, dashboards, etc.
+
+## How long
+This will cover the retention time of data, information, dashboards, etc.
+But it can also be about the drill up, drill down and details.
+
+## Where
+This will cover, what functions and storage can be archived with what cluster the best.
+
+## How to react
+Power is nothing without control. And alerts are nothing without action.
+It is often underestimated, how important a (maybe manual) process outside the system is, and needs to be defined.
+Maybe a [RACI matrix](https://www.aihr.com/blog/raci-template/) could come in handy here.
+
+## Matrix
+This should become a final matrix to easy see, what persona needs what product where and when.
+
+| Persona | Outcome | Channel | Urgency | Cluster | Reaction |
+|---------|---------|---------|---------|---------|----------|
+
+## Usecases
+A more practical approach to see the different personas and goals in action.
