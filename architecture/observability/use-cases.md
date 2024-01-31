@@ -8,6 +8,93 @@ Every topic should also covering musts, possible problems, what-not-to, and outl
 
 ## Who
 This will cover the personas
+- Professor
+- Student
+- Accounting
+- Admin for classes
+- Admin for NERC
+- (RH) Contributor
+- do we need a finer granularity in admins? like per university?
+
+###
+### Professor
+#### Problem to solve
+- How many students of my class are using it?
+  - Budget (paying the online bill)
+  - Participation (cloud vs local deployment)
+  - When are they using it ()
+- Setting a budget
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
+### Student
+#### Problem to solve
+- creating work environents
+- creating dashboards and observability
+- do we need a finer granularity (different classes, different painpoints?)
+
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
+### Accounting
+#### Problem to solve
+- how much hours are used
+- who used it
+- what group/customer do they belong to
+
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
+### Admin for classes
+#### Problem to solve
+- certain clusters/namespaces
+- certain users
+- classes need to have enough resources
+-
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
+### Admin for NERC
+#### Problem to solve
+- all clusters
+- hardware & software
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
+### Other customers
+#### Problem to solve
+- how much do I have to pay
+- setting a budget
+- being warned (customized)
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
+### (RH) Contributor
+#### Problem to solve
+#### Solution
+#### Trigger
+#### Action
+#### Output
+#### Quality Definition
+
 
 ## Why
 This will cover the needed insiggtr
