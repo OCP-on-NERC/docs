@@ -6,6 +6,11 @@ The focus will not be on a general view of all possible personas and usecases, b
 For sure, some universal ideas will be covered and can be used as a starting point for other approaches.
 Every topic should also covering musts, possible problems, what-not-to, and outlooks.
 
+Main goal is, solving the personas problem.
+Then quality, easiness, speed, and pro-active help (forecast, prevent). Depending on the definition, all the mentioned things can fall under quality.
+
+`When there is nothing left to get rid of, to not destroy the needed solution.`
+
 ## Who
 This will cover the personas
 - Professor
@@ -100,7 +105,13 @@ This will cover the personas
 This will cover the needed insiggtr
 
 ## What
-This will cover the product, used by the receiver
+This will cover the product, used by the receiver.
+Measure the quality, that can be defined by e.g.
+- will it solve the problem
+- how much did it help
+- did it prevent a not-wanted outcome
+- did it reach the right persons(s)
+- did it support the outcome (easier, faster, better)
 
 ## When
 This will cover the possible trigger, alerts; from the inside (treshold, limits, errors, ...) and outside(time, events, ...)
@@ -111,6 +122,7 @@ Being aware of status (vital signs) as well as trends (change in values) will be
 ### Ideas:
 - logarithmic scale triggering
 - ISO fallback
+- not too much
 
 ## How
 This will cover, how someone,something will be informed.
