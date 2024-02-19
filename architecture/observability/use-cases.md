@@ -20,7 +20,6 @@ This will cover the personas
 - Admin for NERC
 - (RH) Contributor
 - do we need a finer granularity in admins? like per university?
-
 ###
 ### Professor
 #### Problem to solve
@@ -31,6 +30,10 @@ This will cover the personas
 - Setting a budget
 #### Solution
 #### Trigger
+- Budgetplanning
+- Exams, homework, assignments
+- Planning next class
+- End of month accounting, bookkeeping
 #### Action
 #### Output
 #### Quality Definition
@@ -40,7 +43,6 @@ This will cover the personas
 - creating work environents
 - creating dashboards and observability
 - do we need a finer granularity (different classes, different painpoints?)
-
 #### Solution
 #### Trigger
 #### Action
@@ -52,7 +54,6 @@ This will cover the personas
 - how much hours are used
 - who used it
 - what group/customer do they belong to
-
 #### Solution
 #### Trigger
 #### Action
@@ -64,7 +65,6 @@ This will cover the personas
 - certain clusters/namespaces
 - certain users
 - classes need to have enough resources
--
 #### Solution
 #### Trigger
 #### Action
@@ -73,8 +73,13 @@ This will cover the personas
 
 ### Admin for NERC
 #### Problem to solve
-- all clusters
-- hardware & software
+- Status of ALL clusters
+- Hardware & software
+- same as RH Contributors
+  - Checking new features (e.g. garbage collection for old jupyternotebooks)
+  - Status after deploying new versions or upgrades
+  - Status after fixing a problem
+  - Regression (test) status
 #### Solution
 #### Trigger
 #### Action
@@ -94,6 +99,10 @@ This will cover the personas
 
 ### (RH) Contributor
 #### Problem to solve
+- Checking new features (e.g. garbage collection for old jupyternotebooks)
+- Status after deploying new versions or upgrades
+- Status after fixing a problem
+- Regression (test) status
 #### Solution
 #### Trigger
 #### Action
@@ -102,7 +111,7 @@ This will cover the personas
 
 
 ## Why
-This will cover the needed insiggtr
+This will cover the needed insight
 
 ## What
 This will cover the product, used by the receiver.
