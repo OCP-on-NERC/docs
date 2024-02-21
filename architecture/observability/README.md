@@ -56,7 +56,7 @@ The following technologies have been chosen for this solution:
 
 - **[Red Hat OpenShift Data Foundation][odf] (ODF)**: ODF is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
 
-- **[VictoriaMetrics]**: VictoriaMetrics offers an option to also send metrics to a Backup Object Bucket, and on the infra side, the metrics go to a separate metrics bucket with retention.
+- **[VictoriaMetrics]**: VictoriaMetrics is an alternative storage backend for Prometheus. It offers an option to store metrics in an object storage service. On the infra side, the metrics go to a separate metrics bucket with a retention policy to limit the space consumed by metrics storage.
 
 - **[Alertmanager]**: The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
 
