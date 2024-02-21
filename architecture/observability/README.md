@@ -61,5 +61,4 @@ The following technologies have been chosen for this solution:
 
 **Alertmanager:** The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
 
----
-[1]: https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.9/html/observability/using-observability#exporting-metrics-to-external-endpoints
+[victoriametrics]: https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.9/html/observability/using-observability#exporting-metrics-to-external-endpoints
