@@ -1,4 +1,3 @@
-
 # Background Summary
 
 As the multi-cluster environments at NERC scales and grows it brings cluster management complexities, which makes it necessary to have real-time/near real-time visibility to events, incidents and activities as they occur, especially in the Production and Infrastructure clusters. Having that visibility will allow in taking appropriate actions timely to ensure a high level of resiliency in the NERC clusters and overall infrastructure platform.
@@ -43,20 +42,29 @@ The architecture diagram below is a graphical overview of the observability solu
 
 The following technologies have been chosen for this solution:
 
-**Red Hat Advanced Cluster Management (RHACM):** This component helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.
+- **[Red Hat Advanced Cluster Management][rhacm] (RHACM)**: This component helps overcome the challenges of managing multi-clusters environments and ensures appropriate enforcement of configurations and policies across the clusters for governance and compliance.
 
-**Red Hat Advanced Cluster Management Observability Service:** The observability service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. The service gets deployed automatically to each cluster when Observability is enabled in RHACM.
+- **[Red Hat Advanced Cluster Management Observability Service][acm-obs]**: The observability service provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. The service gets deployed automatically to each cluster when Observability is enabled in RHACM.
 
-**Thanos:** Thanos aggregates and stores all the metrics received from all the Prometheus instances from the managed clusters into an object storage, such that it can then support dashboards that can offer a holistic view of the fleet of managed clusters.
+- **[Thanos]**: Thanos aggregates and stores all the metrics received from all the Prometheus instances from the managed clusters into an object storage, such that it can then support dashboards that can offer a holistic view of the fleet of managed clusters.
 
-**Metrics Collector:** The metric collector does exactly what that name says, it collects and aggregates the metrics data forwarded by the Prometheus instance. It then uses the RHACM Observability Controller API to push data to the RHACM hub cluster.
+- **Metrics Collector**: The metric collector does exactly what that name says, it collects and aggregates the metrics data forwarded by the Prometheus instance. It then uses the RHACM Observability Controller API to push data to the RHACM hub cluster.
 
-**Prometheus:** Prometheus is native to OpenShift Container Platform and monitors all the cluster components and forwards the metrics data to the Metrics Collector or to the Grafana instance local to the cluster.
+- **[Prometheus]**: Prometheus is native to OpenShift Container Platform and monitors all the cluster components and forwards the metrics data to the Metrics Collector or to the Grafana instance local to the cluster.
 
-**Grafana:** Grafana is being utilized to provide dashboard(s) for visibility to the end-to-end platform metrics for all the clusters through a single pane of glass. Grafana comes out of the box as part of the RHACM Observability stack and is installed during RHACM installation process.
+- **[Grafana]**: Grafana is being utilized to provide dashboard(s) for visibility to the end-to-end platform metrics for all the clusters through a single pane of glass. Grafana comes out of the box as part of the RHACM Observability stack and is installed during RHACM installation process.
 
-**Red Hat OpenShift Data Foundation (ODF):** ODF is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
+- **[Red Hat OpenShift Data Foundation][odf] (ODF)**: ODF is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
 
-**VictoriaMetrics:** VictoriaMetrics offers an option it is configured to go to a Backup Object Bucket, and on the infra side, the metrics go to a separate metrics bucket with retention.
+- **[VictoriaMetrics]**: VictoriaMetrics is an alternative storage backend for Prometheus. It offers an option to store metrics in an object storage service. On the infra side, the metrics go to a separate metrics bucket with a retention policy to limit the space consumed by metrics storage. VictoriaMetrics adds several benefits that are not inherently provided by Prometheus alone, particularly in areas related to scalability, long-term storage efficiency, high availability, clustering, and multi-tenancy. It integrates seamlessly withy Prometheus and supports PromQL.
 
-**Alertmanager:** The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
+- **[Alertmanager]**: The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
+
+[rhacm]: https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.9
+[odf]: https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation
+[acm-obs]: https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.9/html/observability/index
+[victoriametrics]: https://victoriametrics.com/
+[thanos]: https://thanos.io/
+[prometheus]: https://prometheus.io/
+[grafana]: https://grafana.com/
+[alertmanager]: https://prometheus.io/docs/alerting/latest/alertmanager/
