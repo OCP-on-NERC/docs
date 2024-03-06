@@ -19,7 +19,37 @@ This will cover the personas
 - Admin for classes
 - Admin for NERC
 - (RH) Contributor
+- Accountant IRS
+- Security Officer
 - do we need a finer granularity in admins? like per university?
+
+### Summary Who - Personas and Their Needs in the OBS Cluster
+
+#### Professor
+Professors lead academic classes and are responsible for planning the budget for class costs, monitoring the progress and usage of resources by students, and ensuring resources do not exceed set quotas. They require tools for efficient management and oversight of class activities and resources. Alerts for nearing resource limits and dashboards for tracking both budgetary and academic progress are essential for them.
+
+#### Student
+Students are engaged in learning through assignments and projects, relying on access to necessary resources without the need for deep interaction with the OBS cluster. Their primary need is a stable and accessible environment that supports their academic endeavors. Minimal alerts or notifications about resource availability and system status are sufficient for their requirements.
+
+#### Accounting
+Accounting personnel are responsible for writing invoices based on the usage of resources and ensuring financial operations align with budget allocations. They need detailed reports and analytics on resource consumption for accurate billing and financial planning. Tools for predictive budgeting and cost analysis can significantly aid their work.
+
+#### Admin for Classes
+Class admins maintain the operational status of classes, manage alerts and warnings, and troubleshoot and resolve issues to keep classes running smoothly. They require advanced monitoring tools for real-time resource status and automated alerting systems for potential issues. Their role involves hands-on management of classroom resources and assisting in the quick resolution of any problems.
+
+#### Admin for NERC
+NERC admins oversee the general health and performance of all resources, focusing on the broader infrastructure rather than specific class resources. They require a global view of the system's status, including hardware, software, and network health. Comprehensive dashboards and alert systems for monitoring and predictive maintenance are essential.
+
+#### Red Hat / Contributor
+Red Hat contributors or similar roles are involved in maintaining and enhancing the OBS cluster's infrastructure, including the development of new features and dashboards. They are key to the continuous improvement of the system, requiring development and monitoring tools that support innovation and maintenance. Access to advanced analytics and customization capabilities is critical for their work. Collaboration tools for contributing to system enhancements are also crucial for their work.
+
+#### Accountant IRS
+IRS accountants are concerned with auditing and verifying the accuracy of invoicing for compliance and regulatory purposes. They need secure access to detailed resource usage and financial reports to ensure transparency and correctness in billing. Tools for audit trails and compliance verification are essential for their role; secure access controls to protect sensitive information, also.
+
+#### Security Officer
+Security officers focus on maintaining the integrity and security of the OBS cluster, preparing for audits, and responding to incidents. They require real-time security monitoring tools, access to detailed logs for investigations, and compliance tracking features. Alerts for security breaches and comprehensive reporting tools are crucial for their responsibilities.
+
+
 ###
 ### Professor
 #### Problem to solve
