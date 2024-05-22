@@ -6,11 +6,16 @@
 
 ## Background Summary
 
-As the multi-cluster environments at NERC scales and grows it brings cluster management complexities, which makes it necessary to have real-time/near real-time visibility to events, incidents and activities as they occur, especially in the Production and Infrastructure clusters. Having that visibility will allow in taking appropriate actions timely to ensure a high level of resiliency in the NERC clusters and overall infrastructure platform.
+As the multi-cluster environments at NERC scales and grows it brings cluster management complexities, which makes it necessary to have real-time/near real-time visibility to events, incidents and activities as they occur, especially in the Production and Infrastructure clusters.
+Having that visibility will allow in taking appropriate actions timely to ensure a high level of resiliency in the NERC clusters and overall infrastructure platform.
 
 ## Solution Overview
 
-Red Hat Advanced Cluster Management (RHACM) Observability provides end-to-end visibility of the fleet of clusters in an environment. It consolidates and centralizes all the metrics from each of the clusters it manages. Within the RHACM Hub Cluster, the key items of importance are the Multi-cluster Observability Operator and the Observability Controller API. Both these services are deployed when observability is enabled in RHACM. Once enabled the Observability Controller API collects the metrics data from Prometheus instances in each of the managed OpenShift clusters, mainly the Production cluster (ocp-nerc-prod) and the Test cluster (ocp-nerc-test), and sends them over to the RHACM Hub cluster, which is part of the Infrastructure cluster (ocp-nerc-infra).
+Red Hat Advanced Cluster Management (RHACM) Observability provides end-to-end visibility of the fleet of clusters in an environment.
+It consolidates and centralizes all the metrics from each of the clusters it manages.
+Within the RHACM Hub Cluster, the key items of importance are the Multi-cluster Observability Operator and the Observability Controller API.
+Both these services are deployed when observability is enabled in RHACM.
+Once enabled, the Observability Controller API collects the metrics data from Prometheus instances in each of the managed OpenShift clusters, mainly the Production cluster (ocp-nerc-prod) and the Test cluster (ocp-nerc-test), and sends them over to the RHACM Hub cluster, which is part of the Infrastructure cluster (ocp-nerc-infra).
 
 The RHACM Hub cluster leverages two main services, Thanos and Observatorium in conjunction with Grafana to deliver an end-to-end single pane view for platform metrics for all managed clusters. Observatorium API enables connectivity and access to Thanos and helps extract the metrics data from all the Prometheus instances in the managed clusters and pushes them into the Object storage leveraging Thanos. Thanos helps  store the metrics data in a predefined object storage such as Red Hat OpenShift Data Foundation (ODF).
 
@@ -25,7 +30,7 @@ Observability is included with the RHACM installation, however the service must 
 5. Enable the multi-cluster observability add-on. There are a couple of options to accomplish this:
     - Via the OpenShift web console, select the installed operators and clicking on “Create instance” for MultiClusterObservability
     - Create a Custom Resource (CR) and apply it
-6. Step #5 will generate a link for Grafana in the RHACM web console once all the necessary pods for Thanos, Grafana and Alertmanager are created, and all the managed clusters are connected to the RHACM Hub cluster and sending their metrics to the RHACM observability service
+6. Step #5 will generate a link for Grafana in the RHACM web console once all the necessary pods for Thanos, Grafana, and Alertmanager are created, and all the managed clusters are connected to the RHACM Hub cluster and sending their metrics to the RHACM observability service
 7. Click on the Grafana link to launch the Grafana dashboard to validate that observability is enabled and metrics data is populated
 
 ### Observability workflow

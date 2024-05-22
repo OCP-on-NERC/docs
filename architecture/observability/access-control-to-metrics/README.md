@@ -7,8 +7,7 @@ Protect and expose the ACM Observability metrics data through a secure proxy pro
 ## Background
 
 The New England Research Cloud is a perfect environment for software cloud related research.
-Because the metrics data for the New England Research Cloud OpenShift clusters is only found in the infra cluster behind a VPN,
-we wish to protect and expose the metrics data through a secure proxy providing fine-grained resource permissions to the metrics.
+Because the metrics data for the New England Research Cloud OpenShift clusters is only found in the infra cluster behind a VPN, we wish to protect and expose the metrics data through a secure proxy providing fine-grained resource permissions to the metrics.
 Access to the metrics will be given to approved research projects for a defined period of time.
 We provide the unique credentials to the research teams to access the metrics through a new Prometheus Keycloak Proxy and Keycloak Permissions Operator that we built for this purpose.
 
@@ -29,10 +28,17 @@ We provide the unique credentials to the research teams to access the metrics th
 
 ## The technology
 
-- [Red Hat Advanced Cluster Management Observability](https://www.redhat.com/en/technologies/management/advanced-cluster-management) provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment. In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization and resource utilization. The service gets deployed automatically to each cluster when Observability is enabled in RHACM.
-- [Red Hat Build of Keycloak Operator](https://access.redhat.com/products/red-hat-build-of-keycloak/) is a cloud-native Identity Access Management solution based on the popular open source Keycloak project. We configure a realm called `NERC`, and a main client called `nerc` where permissions to all clients are granted. We create a new client for each approved research team requiring access to metrics with the Red Hat Build of Keycloak Operator.
-- [Keycloak Permissions Operator](https://github.com/nerc-images/keycloak-permissions-operator) is an OpenShift Operator for managing Keycloak resources, scopes, policies, and permissions for fine-grained resource permissions. This operator is built by the NERC software engineers. It's available as an OpenShift Operator, and a [Kubernetes Community Operator](https://operatorhub.io/operator/keycloak-permissions-operator).
-- [Prometheus Keycloak Proxy](https://github.com/nerc-images/prom-keycloak-proxy) is a proxy for observatorium and prometheus on OpenShift, secured by Keycloak Fine-Grained Resource Permissions. This application is built by the NERC software engineers.
+- [Red Hat Advanced Cluster Management Observability](https://www.redhat.com/en/technologies/management/advanced-cluster-management) provides a centralized hub for metrics, alerting, and monitoring of platforms for a multi-cluster environment.
+In addition, the observability component also focuses on displaying cluster health metrics, which describes the control plane health, cluster optimization, and resource utilization.
+The service gets deployed automatically to each cluster when Observability is enabled in RHACM.
+- [Red Hat Build of Keycloak Operator](https://access.redhat.com/products/red-hat-build-of-keycloak/) is a cloud-native Identity Access Management solution based on the popular open source Keycloak project.
+We configure a realm called `NERC` and a main client called `nerc` where permissions to all clients are granted.
+We create a new client for each approved research team requiring access to metrics with the Red Hat Build of Keycloak Operator.
+- [Keycloak Permissions Operator](https://github.com/nerc-images/keycloak-permissions-operator) is an OpenShift Operator for managing Keycloak resources, scopes, policies, and permissions for fine-grained resource permissions.
+This operator is built by the NERC software engineers.
+It's available as an OpenShift Operator, and a [Kubernetes Community Operator](https://operatorhub.io/operator/keycloak-permissions-operator).
+- [Prometheus Keycloak Proxy](https://github.com/nerc-images/prom-keycloak-proxy) is a proxy for observatorium and prometheus on OpenShift, secured by Keycloak Fine-Grained Resource Permissions.
+This application is built by the NERC software engineers.
 
 ## NERC OpenShift clusters involved
 
@@ -44,14 +50,15 @@ The Observatorium API is also secured behind a Harvard VPN.
 The [metrics query Observatorim APIs](https://observatorium.io/docs/api#tag/metricsqueryv1) will be queried by services deployed on the `obs` cluster.
 This prevents any approved researchers from building approved applications for querying and reporting on our NERC OpenShift metrics.
 - The NERC `obs` cluster is where we deploy 2 new services to authenticate applications and users wishing to query NERC metrics.
-We configure the clusters, namespaces, and metrics they wish to connect to, and grant them permissions to approved resources with the new [Keycloak Permissions Operator](https://github.com/nerc-images/keycloak-permissions-operator) we built for this purpose together with the [Red Hat Build of Keycloak Operator](https://access.redhat.com/products/red-hat-build-of-keycloak/).
+We configure the clusters, namespaces, and metrics they wish to connect to and grant them permissions to approved resources with the new [Keycloak Permissions Operator](https://github.com/nerc-images/keycloak-permissions-operator) we built for this purpose together with the [Red Hat Build of Keycloak Operator](https://access.redhat.com/products/red-hat-build-of-keycloak/).
 Our new [Prometheus Keycloak Proxy](https://github.com/nerc-images/prom-keycloak-proxy) application we built checks their authorizations to metrics resources before querying any [Observatorim API metrics](https://observatorium.io/docs/api#tag/metricsqueryv1) they have requested.
 We have configured the Prometheus Keycloak Proxy with the TLS certificate, private key, and CA certificate required to connect to observatorium behind the VPN on the infra cluster.
 - The NERC `prod` cluster is where our approved research applications will connect to the Prometheus Keycloak Proxy on the `obs` cluster to query Observatorim API metrics.
 
 ## Keycloak authorization services
 
-Keycloak provides a complete solution for defining fine-grained resource permissions for NERC clients to access metrics resources. Our new Keycloak Permissions Operator makes this configuration easy.
+Keycloak provides a complete solution for defining fine-grained resource permissions for NERC clients to access metrics resources.
+Our new Keycloak Permissions Operator makes this configuration easy.
 
 ### Keycloak resources and scopes
 
