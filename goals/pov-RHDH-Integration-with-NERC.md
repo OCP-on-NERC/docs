@@ -74,20 +74,29 @@ RHDH integration would involve significant customization and the use of plugins 
 To measure the impact of RHDH integration, the following success criteria have been identified:
 
 1. **Reduced time required for onboarding new users**
-    1. Prio High
-    2. Success probability: low (the current process in ColdFront and manual approval is the biggest time consumer)
+    - Prio High
+    - Success probability: low (the current process in ColdFront and manual approval is the biggest time consumer)
 2. **Decreased manual intervention by admins for cluster deployment**
-    3. Prio Medium
-    4. Success probability: medium (HyperShift could be the solution here, but if we have too many special cases/unique solutions for standalone clusters, RHDH can add on start to all links and templates but will not remove most of the manual work)
+    - Prio Medium
+    - Success probability: medium (HyperShift could be the solution here, but if we have too many special cases/unique solutions for standalone clusters, RHDH can add on start to all links and templates but will not remove most of the manual work)
 3. **Improved user satisfaction or ease of use for professors managing classes**
-    5. Prio Medium
-    6. Success probability: high (switching between so many tools: RHDH can at least become the one stop for all and give a Golden Path)
+    - Prio Medium
+    - Success probability: high (switching between so many tools: RHDH can at least become the one stop for all and give a Golden Path)
 4. **Enhanced workflow automation and streamlined processes for resource allocation**
-    7. Prio High
-    8. Success probability: medium (depending on the connectivity between RHDH and OpenShift, ColdFront, ACM, and Single clusters)
+    - Prio High
+    - Success probability: medium (depending on the connectivity between RHDH and OpenShift, ColdFront, ACM, and Single clusters)
 5. **All users: single pane of glass, better user experience by offering one platform**
-    9. Prio High
-    10. Success probability: high (this is exactly what RHDH is made for: no matter how many tools, not retired systems, workflows, or plain documentation there are, RHDH can connect them all under one hood)
+    - Prio High
+    - Success probability: high (this is exactly what RHDH is made for: no matter how many tools, not retired systems, workflows, or plain documentation there are, RHDH can connect them all under one hood)
+
+## Researching Maintenance Costs
+
+Before integrating RHDH, it's important to evaluate the (long-term) maintenance costs associated with this addition.
+1. **Customization Costs**: RHDH requires plugin and script customization to align with NERC's specific use cases.
+1. **Ongoing Support**: Identify the amount of continuing support that would be necessary for updates, troubleshooting, and further development of customized scripts and plugins.
+1. **Comparison with Alternatives**: If HyperShift is more efficient and requires less customization, it could be the better/cheaper choice.
+
+It can be critical to ensure that the benefits of RHDH outweigh the costs and efforts to keep the expected scaling effects.
 
 ## Conclusion
 
@@ -101,6 +110,7 @@ The next steps include:
 * Evaluating the necessity of manual approvals.
 * Exploring HyperShift's capabilities.
 * Assessing whether RHDH's integration can deliver the desired automation and usability improvements.
+* Researching maintenance costs.
 
 Based on these findings, a decision can be made regarding the implementation of RHDH within NERC.
 
