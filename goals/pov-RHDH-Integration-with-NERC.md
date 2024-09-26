@@ -136,3 +136,21 @@ Based on these findings, a decision can be made regarding the implementation of 
     * If it is about user experience: depends
         * Current users, already working with the tools (ColdFront, OpenShift, RHOAI): maybe not, adding another/ new tools
         * New users: most likely, all in one place, even the manual tutorials
+* Researching Maintenance Costs
+    * RHDH is very good for using GitOps
+        * Coldfront: the current scripts/plugins are not GitOps based, but communicating directly with OpenShift
+            * we are missing a single point of truth (ColdFront is not storing the expected state; RHDH should not be the single point of truth; GitOps should be in the philosophy of Backstage)
+            * simple replacing the current scripts between ColdFront and OpenShift with ColdFront to RHDH to OpenShift would not win much but produce initial more work to migrate, and not win much
+            * ColdFront has a plugin for OpenShift, but not for RHDH
+    * Main goal, savings? Before judging the costs, we need to know the goal to compare it to.
+        * When the goal is, saving time, it depends on the use-case (see above)
+        * When the goal is, having a workflow, then it would save a little time, but increase quality and consistency, maybe leading to better scalability
+        * When the goal is, having a nice user experience, then it wouldn't save time but increase the happiness of the users and hopefully reduce the number of support requests
+        * All three above topics need to be defined to whom it saves time, increases quality, and improves happiness.
+            * Saving time for the users will cost maintenance and time to create it, but not save time for the admins; it may increase the number of users in the future.
+            * Creating quality, see the last point
+            * Creating a workflow will create scalability and save time for the admins.
+        * Therefore, introducing a new tool/platform without removing others will add maintenance costs.
+        * The savings will be more on the user experience and, on the long run
+            * scalability
+            * quality & easiness, more happiness, more users
