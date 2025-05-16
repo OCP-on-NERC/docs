@@ -47,22 +47,14 @@ The architecture diagram below is a graphical overview of the observability solu
 
 ## Architecture Diagram
 
-![plot](./img/Observability-Architecture-v2.png)
+![plot](./img/Observability-Architecture-v3.png)
 
-```mermaid
-sequenceDiagram
-    Prometheus->>Thanos: All Metrics
-    Thanos->>ODF: All Metrics
-    Thanos->>VictoriaMetrics: All Metrics
-    External Grafana-->>Thanos: Query A
-    Thanos-->>Thanos: Query A
-    Thanos-->>Thanos: A Metrics Age<6h
-    Thanos-->>ODF: Query A
-    ODF-->>Thanos: A 6h<Metrics Age<90d
-    Thanos-->>VictoriaMetrics: Query A
-    VictoriaMetrics-->>Thanos: A 90d<Metrics Age<1y
-    Thanos-->>External Grafana: Answer A
-```
+- [Retention Settings](https://github.com/OCP-on-NERC/nerc-ocp-config/blob/782743852b86a1a90a54ea477583494eefa57683/cluster-scope/base/observability.open-cluster-management.io/multiclusterobservabilities/observability/multiclusterobservability.yaml#L45)
+  - retentionInLocal: 24h           # default is 24h
+  - retentionResolutionRaw: 90d     # default is 30d
+  - retentionResolution5m: 360d     # default is 180d
+  - retentionResolution1h: 0d       # default is 0d - 0d will retain samples of this resolution [forever/ring buffer](https://thanos.io/tip/components/compact.md/)
+
 
 ## Technology
 
@@ -82,7 +74,7 @@ The following technologies have been chosen for this solution:
 
 - **[Red Hat OpenShift Data Foundation][odf] (ODF)**: ODF is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
 
-- **[VictoriaMetrics]**: VictoriaMetrics is an alternative storage backend for Prometheus. It offers an option to store metrics in an object storage service. On the infra side, the metrics go to a separate metrics bucket with a retention policy to limit the space consumed by metrics storage. VictoriaMetrics adds several benefits that are not inherently provided by Prometheus alone, particularly in areas related to scalability, long-term storage efficiency, high availability, clustering, and multi-tenancy. It integrates seamlessly withy Prometheus and supports PromQL.
+- **[minio]**: MinIO is a high-performance, Kubernetes-native object storage system that is fully compatible with the Amazon S3 API. It is designed for scalability, durability, and simplicity, making it well-suited for storing unstructured data such as metrics, logs, traces, backups, and media files.
 
 - **[Alertmanager]**: The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
 
@@ -90,6 +82,7 @@ The following technologies have been chosen for this solution:
 [odf]: https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation
 [acm-obs]: https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.9/html/observability/index
 [victoriametrics]: https://victoriametrics.com/
+[minio]: https://min.io/
 [thanos]: https://thanos.io/
 [prometheus]: https://prometheus.io/
 [grafana]: https://grafana.com/
