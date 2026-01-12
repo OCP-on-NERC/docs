@@ -47,7 +47,7 @@ The architecture diagram below is a graphical overview of the observability solu
 
 ## Architecture Diagram
 
-![plot](./img/Observability-Architecture-v3.png)
+![plot](./img/Observability-Architecture-v4.png)
 
 - [Retention Settings](https://github.com/OCP-on-NERC/nerc-ocp-config/blob/782743852b86a1a90a54ea477583494eefa57683/cluster-scope/base/observability.open-cluster-management.io/multiclusterobservabilities/observability/multiclusterobservability.yaml#L45)
   - retentionInLocal: 24h           # default is 24h
@@ -74,7 +74,7 @@ The following technologies have been chosen for this solution:
 
 - **[Red Hat OpenShift Data Foundation][odf] (ODF)**: ODF is an object storage that is required and made available for Thanos on the RHACM Hub cluster to store all the platform metrics collected from each of the managed clusters.
 
-- **[minio]**: MinIO is a high-performance, Kubernetes-native object storage system that is fully compatible with the Amazon S3 API. It is designed for scalability, durability, and simplicity, making it well-suited for storing unstructured data such as metrics, logs, traces, backups, and media files.
+- **[S3 on OpenStack]**: A scalable, S3-compatible object storage service provided by the NERC OpenStack infrastructure. It offers high availability and durability, making it well suited for storing unstructured data such as metrics, logs, traces, and backups.
 
 - **[Alertmanager]**: The Alertmanager is a component of RHACM, and it takes care of deduplicating, grouping, and routing the alerts to the predefined appropriate end tools such as email, PagerDuty, or OpsGenie. Basically, the Alertmanager from the managed clusters will forward all the alerts to the RHACM hub cluster observability service for it to take appropriate action on the alerts.
 
@@ -82,7 +82,7 @@ The following technologies have been chosen for this solution:
 [odf]: https://www.redhat.com/en/technologies/cloud-computing/openshift-data-foundation
 [acm-obs]: https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.9/html/observability/index
 [victoriametrics]: https://victoriametrics.com/
-[minio]: https://min.io/
+[S3 on OpenStack]: https://docs.openstack.org/mitaka/config-reference/object-storage/configure-s3.html
 [thanos]: https://thanos.io/
 [prometheus]: https://prometheus.io/
 [grafana]: https://grafana.com/
